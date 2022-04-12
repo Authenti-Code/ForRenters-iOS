@@ -12,7 +12,6 @@ class SettingsVc: UIViewController, LogOutProtocol {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInVc") as! LogInVc
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
     @IBOutlet weak var SettingTblView: UITableView!
     var SettNameAry = ["About us","Privacy Policy/Cookies","Help","Contact us","Terms of use","Reset password","","Logout"]
     var SettIconAry = ["Sprofile","privacy","help","contact-us","terms-of-use","reset-password","","logout"]
