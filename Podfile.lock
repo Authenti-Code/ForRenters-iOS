@@ -75,6 +75,11 @@ PODS:
     - GoogleUtilities/Environment (~> 7.2)
     - nanopb (~> 2.30908.0)
     - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleMaps (2.5.0):
+    - GoogleMaps/Maps (= 2.5.0)
+  - GoogleMaps/Base (2.5.0)
+  - GoogleMaps/Maps (2.5.0):
+    - GoogleMaps/Base
   - GoogleUtilities/AppDelegateSwizzler (7.6.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -112,6 +117,7 @@ DEPENDENCIES:
   - BRYXBanner
   - Firebase/Analytics
   - Firebase/Crashlytics
+  - GoogleMaps (~> 2.5.0)
   - IQKeyboardManagerSwift
   - SDWebImage (~> 5.0)
   - SVProgressHUD
@@ -129,6 +135,7 @@ SPEC REPOS:
     - FirebaseInstallations
     - GoogleAppMeasurement
     - GoogleDataTransport
+    - GoogleMaps
     - GoogleUtilities
     - IQKeyboardManagerSwift
     - nanopb
@@ -148,6 +155,7 @@ SPEC CHECKSUMS:
   FirebaseInstallations: 830327b45345ffc859eaa9c17bcd5ae893fd5425
   GoogleAppMeasurement: a3311dbcf3ea651e5a070fe8559b57c174ada081
   GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
+  GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
   GoogleUtilities: 684ee790a24f73ebb2d1d966e9711c203f2a4237
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
@@ -155,6 +163,6 @@ SPEC CHECKSUMS:
   SDWebImage: 240e5c12b592fb1268c1d03b8c90d90e8c2ffe82
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: beaba2dc1d8a06e01a0ac9d2547bc928675a0376
+PODFILE CHECKSUM: a07237cd19ad4406ccbbc8cf09439ea143611831
 
 COCOAPODS: 1.11.3

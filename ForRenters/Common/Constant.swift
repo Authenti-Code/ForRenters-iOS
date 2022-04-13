@@ -33,3 +33,19 @@ enum constants {
     
 
 }
+var latitudValue:String {
+    get {
+        UserDefaults.standard.value(forKey:"latitude") as? String ?? ""
+    }
+    set {
+        UserDefaults.standard.setValue(newValue, forKey:"latitude")
+    }
+}
+var longitudeValue:String {
+    get {
+        UserDefaults.standard.value(forKey:"longitude") as? String ?? ""
+    }
+    set {
+        UserDefaults.standard.setValue(newValue, forKey:"longitude")
+    }
+}
