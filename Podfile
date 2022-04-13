@@ -14,5 +14,6 @@ target 'ForRenters' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
   pod 'IQKeyboardManagerSwift'
+  pod 'GoogleMaps', '~> 2.5.0'
 
 end

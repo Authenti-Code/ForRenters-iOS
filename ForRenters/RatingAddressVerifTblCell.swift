@@ -8,6 +8,7 @@
 import UIKit
 
 class RatingAddressVerifTblCell: UITableViewCell {
+    @IBOutlet weak var oAddressVw: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

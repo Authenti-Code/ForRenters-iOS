@@ -27,6 +27,10 @@ class ReviewsVc: UIViewController {
     @IBAction func oBackBtnAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    @IBAction func oAddReviewAction(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RatingVc") as! RatingVc
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 //MARK:-->  Collection View Delegate Method
 extension ReviewsVc: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -88,11 +92,6 @@ extension ReviewsVc{
         oStickerVw.layer.shadowRadius = 0.4
         oStickerVw.layer.shadowOffset = .zero
         oStickerVw.layer.masksToBounds = false
-//        // MARK :-- LogIn Button Shadow
-//        oCollectionCellVw.layer.shadowColor = UIColor.red.cgColor
-//        oCollectionCellVw.layer.shadowOpacity = 0.1
-//        oCollectionCellVw.layer.shadowRadius = 3.0
-//        oCollectionCellVw.layer.shadowOffset = .zero
-//        oCollectionCellVw.layer.masksToBounds = false
+
     }
 }
