@@ -14,6 +14,7 @@
 		5E0DDBA02806FB5D004C9C22 /* RelatedPropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0DDB9F2806FB5D004C9C22 /* RelatedPropertyCell.swift */; };
 		5E3910C127F48069004298CA /* ReviewsVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3910C027F48069004298CA /* ReviewsVc.swift */; };
 		5E3910C327F48091004298CA /* ReviewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3910C227F48091004298CA /* ReviewCollectionCell.swift */; };
+		5E596EF12807DFA60057EEE0 /* ThankYouPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E596EF02807DFA60057EEE0 /* ThankYouPopUp.swift */; };
 		5E597C6827F48BEE00F9F4B3 /* ReviewsTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E597C6727F48BED00F9F4B3 /* ReviewsTblCell.swift */; };
 		5E74292727F2F01700AEF294 /* SettingTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74292627F2F01700AEF294 /* SettingTblCell.swift */; };
 		5E74292927F31CA500AEF294 /* EditProfileVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74292827F31CA500AEF294 /* EditProfileVc.swift */; };
@@ -54,6 +55,7 @@
 		5E0DDB9F2806FB5D004C9C22 /* RelatedPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedPropertyCell.swift; sourceTree = "<group>"; };
 		5E3910C027F48069004298CA /* ReviewsVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsVc.swift; sourceTree = "<group>"; };
 		5E3910C227F48091004298CA /* ReviewCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionCell.swift; sourceTree = "<group>"; };
+		5E596EF02807DFA60057EEE0 /* ThankYouPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouPopUp.swift; sourceTree = "<group>"; };
 		5E597C6727F48BED00F9F4B3 /* ReviewsTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsTblCell.swift; sourceTree = "<group>"; };
 		5E74292627F2F01700AEF294 /* SettingTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTblCell.swift; sourceTree = "<group>"; };
 		5E74292827F31CA500AEF294 /* EditProfileVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVc.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				5E8A842A2805AEAF0095DA9C /* RatingQuestionsCollectionCell.swift */,
 				5E8A842C2805B0BD0095DA9C /* RatingQuestionTblCell.swift */,
 				5EC142FB27F1D0700001D1A4 /* MyReviewsVc.swift */,
+				5E596EF02807DFA60057EEE0 /* ThankYouPopUp.swift */,
 				5E0DDB952806F9F8004C9C22 /* OverallRieviewVC.swift */,
 				5E0DDB9F2806FB5D004C9C22 /* RelatedPropertyCell.swift */,
 				5E0DDB9B2806FAF5004C9C22 /* DiscriptionCell.swift */,
@@ -348,6 +351,7 @@
 				5EC142FE27F1D0830001D1A4 /* ProfileVc.swift in Sources */,
 				5EC3FB0527E9F1DA006EA26E /* LogInVc.swift in Sources */,
 				5E0DDB962806F9F8004C9C22 /* OverallRieviewVC.swift in Sources */,
+				5E596EF12807DFA60057EEE0 /* ThankYouPopUp.swift in Sources */,
 				5E74292F27F3441000AEF294 /* ResetPasswordVc.swift in Sources */,
 				5E0DDBA02806FB5D004C9C22 /* RelatedPropertyCell.swift in Sources */,
 				5E0DDB9A2806FAB4004C9C22 /* DetailsCell.swift in Sources */,

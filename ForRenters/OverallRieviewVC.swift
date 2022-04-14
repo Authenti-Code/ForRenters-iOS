@@ -25,6 +25,11 @@ class OverallRieviewVC: UIViewController {
         cell?.detailView.layer.shadowOpacity = 10
         }
     @IBAction func didTapReview(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RatingVc") as! RatingVc
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    @IBAction func backBtnAction(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     @IBAction func didTapLeftSwift(_ sender: UIButton) {
 //        let visibleItems: NSArray = self.collectionView.indexPathsForVisibleItems as NSArray
@@ -49,6 +54,7 @@ extension OverallRieviewVC: UICollectionViewDelegate , UICollectionViewDataSourc
             return cell  ?? UICollectionViewCell()
         } else if collectionView == labelCollectionView {
             let cell = labelCollectionView.dequeueReusableCell(withReuseIdentifier: "DiscriptionCell", for: indexPath) as! DiscriptionCell
+           
             cell.lblSectionHeader.text = sectionName[indexPath.row]
             return cell  ?? UICollectionViewCell()
         } else {

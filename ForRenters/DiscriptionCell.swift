@@ -9,5 +9,15 @@ import UIKit
 
 class DiscriptionCell: UICollectionViewCell {
     @IBOutlet weak var lblSectionHeader: UILabel!
-    
+    @IBOutlet weak var oMainVw: UIView!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        oMainVw.layer.masksToBounds = true
+      layer.masksToBounds = false
+// MARK:--> a shadow
+    layer.shadowRadius = 0.3
+    layer.shadowOpacity = 2.0
+    layer.shadowColor = UIColor.red.cgColor
+    layer.shadowOffset = CGSize(width: 0.5, height: 1.5)
+}
 }

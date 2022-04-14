@@ -7,7 +7,11 @@
 
 import UIKit
 
-class RatingVc: UIViewController {
+class RatingVc: UIViewController, ThankYouProtocol {
+    func removethankYouObjPop(address: String) {
+        self.dismiss(animated: false, completion:nil)
+    }
+    
     @IBOutlet weak var RatingStickerCVw:UICollectionView!
     @IBOutlet weak var RatingQuestionTblVw:UITableView!
     @IBOutlet weak var RatingAddressVerifTblVw:UITableView!
@@ -29,8 +33,9 @@ class RatingVc: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func oSubmitReviewAction(_ sender: Any) {
-//        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RatingVc") as! RatingVc
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let nav = storyboard?.instantiateViewController(withIdentifier: "ThankYouPopUp") as! ThankYouPopUp
+        nav.thankYouObj = self
+        self.navigationController?.present(nav, animated: false, completion: nil)
     }
 }
 
