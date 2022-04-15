@@ -21,6 +21,7 @@
 		5E74292B27F332A000AEF294 /* LogoutPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74292A27F332A000AEF294 /* LogoutPopUp.swift */; };
 		5E74292D27F33A3700AEF294 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74292C27F33A3700AEF294 /* Constant.swift */; };
 		5E74292F27F3441000AEF294 /* ResetPasswordVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74292E27F3441000AEF294 /* ResetPasswordVc.swift */; };
+		5E84E6BF2809377E00024A1C /* ForgotPasswordVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84E6BE2809377E00024A1C /* ForgotPasswordVc.swift */; };
 		5E8A84252805AD660095DA9C /* RatingVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A84242805AD660095DA9C /* RatingVc.swift */; };
 		5E8A84272805ADA30095DA9C /* RatingStickerCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A84262805ADA30095DA9C /* RatingStickerCollectionCell.swift */; };
 		5E8A84292805AE660095DA9C /* RatingAddressVerifTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A84282805AE660095DA9C /* RatingAddressVerifTblCell.swift */; };
@@ -62,6 +63,7 @@
 		5E74292A27F332A000AEF294 /* LogoutPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutPopUp.swift; sourceTree = "<group>"; };
 		5E74292C27F33A3700AEF294 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		5E74292E27F3441000AEF294 /* ResetPasswordVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVc.swift; sourceTree = "<group>"; };
+		5E84E6BE2809377E00024A1C /* ForgotPasswordVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVc.swift; sourceTree = "<group>"; };
 		5E8A84242805AD660095DA9C /* RatingVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingVc.swift; sourceTree = "<group>"; };
 		5E8A84262805ADA30095DA9C /* RatingStickerCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStickerCollectionCell.swift; sourceTree = "<group>"; };
 		5E8A84282805AE660095DA9C /* RatingAddressVerifTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingAddressVerifTblCell.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				5E8A842A2805AEAF0095DA9C /* RatingQuestionsCollectionCell.swift */,
 				5E8A842C2805B0BD0095DA9C /* RatingQuestionTblCell.swift */,
 				5EC142FB27F1D0700001D1A4 /* MyReviewsVc.swift */,
+				5E84E6BE2809377E00024A1C /* ForgotPasswordVc.swift */,
 				5E596EF02807DFA60057EEE0 /* ThankYouPopUp.swift */,
 				5E0DDB952806F9F8004C9C22 /* OverallRieviewVC.swift */,
 				5E0DDB9F2806FB5D004C9C22 /* RelatedPropertyCell.swift */,
@@ -354,6 +357,7 @@
 				5E596EF12807DFA60057EEE0 /* ThankYouPopUp.swift in Sources */,
 				5E74292F27F3441000AEF294 /* ResetPasswordVc.swift in Sources */,
 				5E0DDBA02806FB5D004C9C22 /* RelatedPropertyCell.swift in Sources */,
+				5E84E6BF2809377E00024A1C /* ForgotPasswordVc.swift in Sources */,
 				5E0DDB9A2806FAB4004C9C22 /* DetailsCell.swift in Sources */,
 				5E3910C127F48069004298CA /* ReviewsVc.swift in Sources */,
 				5EC3FB0927E9F74C006EA26E /* extension.swift in Sources */,

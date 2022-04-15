@@ -30,6 +30,8 @@ class SignUpVc: UIViewController, ChooseSendProtocol {
 }
     // MARK :-- SignIn Button Action
     @IBAction func oSignInBtnAction(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInVc") as! LogInVc
+        self.navigationController?.pushViewController(vc, animated: true)
 }
 }
 extension SignUpVc{

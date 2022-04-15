@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import UIKit
 enum constants {
     static let password = "Please set minimum 8 character password"
     static let phone = "Please enter minimum 8 character phone number!"
@@ -30,9 +30,18 @@ enum constants {
     static let  sendOtp    =  "OTP sent successfully"
     static let strongPassword =   "Your password must be at least 8 characters and contain at least 1 number and 1 capital letter."
 //    static let  Discription    =  "The post description field is required."
-    
-
 }
+extension UIColor {
+    static var unselectColor: UIColor {
+        return UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 1.0)
+    }
+        static var selectColor: UIColor {
+            return UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1.0)
+        }
+    
+   
+    
+    }
 var latitudValue:String {
     get {
         UserDefaults.standard.value(forKey:"latitude") as? String ?? ""
