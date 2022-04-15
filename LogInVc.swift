@@ -30,6 +30,12 @@ class LogInVc: UIViewController {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CustomTabBarVC") as! CustomTabBarVC
         self.navigationController?.pushViewController(vc, animated: true)
 }
+    @IBAction func forgotPasswordAction(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle:
+        nil).instantiateViewController(withIdentifier: "ForgotPasswordVc") as! ForgotPasswordVc
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+        
 }
 extension LogInVc{
     func addshadow(){

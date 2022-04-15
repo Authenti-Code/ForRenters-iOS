@@ -23,7 +23,10 @@ class EditProfileVc: UIViewController {
         super.viewDidLoad()
         addShadow()
         imgPickerCont.delegate = self
-        // Do any additional setup after loading the view.
+       
+    }
+    @IBAction func submitBtnAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: false)
     }
     @IBAction func oBackBtnAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

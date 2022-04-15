@@ -13,9 +13,7 @@ class ReviewsVc: UIViewController {
     @IBOutlet weak var oRatingVw:UIView!
     @IBOutlet weak var oUserVw:UIView!
     @IBOutlet weak var oStickerVw:UIView!
-    
-    
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         addshadow()
@@ -35,10 +33,11 @@ class ReviewsVc: UIViewController {
 //MARK:-->  Collection View Delegate Method
 extension ReviewsVc: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return groupAry.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = ReviewCollectionVw.dequeueReusableCell(withReuseIdentifier: "ReviewCollectionCell", for: indexPath) as! ReviewCollectionCell
+        cell.oGroupLbl.text = groupAry[indexPath.item]
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -54,7 +53,6 @@ extension ReviewsVc: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ReviewTblVw.dequeueReusableCell(withIdentifier: "ReviewsTblCell") as! ReviewsTblCell
         // MARK :-- Password View Shadow
-        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -8,7 +8,7 @@
 import UIKit
 
 class ReviewCollectionCell: UICollectionViewCell {
-    @IBOutlet weak var olabel:UILabel!
+    @IBOutlet weak var oGroupLbl:UILabel!
     @IBOutlet weak var oCollectionCellVw:UIView!
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -17,7 +17,7 @@ class DiscriptionCell: UICollectionViewCell {
 // MARK:--> a shadow
     layer.shadowRadius = 0.3
     layer.shadowOpacity = 2.0
-    layer.shadowColor = UIColor.red.cgColor
+    layer.shadowColor = UIColor.lightGray.cgColor
     layer.shadowOffset = CGSize(width: 0.5, height: 1.5)
 }
 }

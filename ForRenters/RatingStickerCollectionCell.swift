@@ -8,5 +8,6 @@
 import UIKit
 
 class RatingStickerCollectionCell: UICollectionViewCell {
-    
+    @IBOutlet weak var oStickerLbl:UILabel!
+    @IBOutlet weak var oStickerIcon:UIImageView!
 }

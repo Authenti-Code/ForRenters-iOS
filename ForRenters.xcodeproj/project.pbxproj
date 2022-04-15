@@ -22,6 +22,9 @@
 		5E74292D27F33A3700AEF294 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74292C27F33A3700AEF294 /* Constant.swift */; };
 		5E74292F27F3441000AEF294 /* ResetPasswordVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74292E27F3441000AEF294 /* ResetPasswordVc.swift */; };
 		5E84E6BF2809377E00024A1C /* ForgotPasswordVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84E6BE2809377E00024A1C /* ForgotPasswordVc.swift */; };
+		5E84E6C12809828A00024A1C /* VerificationOTPVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84E6C02809828A00024A1C /* VerificationOTPVc.swift */; };
+		5E84E6C32809857600024A1C /* ChangePasswordVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84E6C22809857500024A1C /* ChangePasswordVc.swift */; };
+		5E84E6C52809859E00024A1C /* BackLogInPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84E6C42809859E00024A1C /* BackLogInPopUp.swift */; };
 		5E8A84252805AD660095DA9C /* RatingVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A84242805AD660095DA9C /* RatingVc.swift */; };
 		5E8A84272805ADA30095DA9C /* RatingStickerCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A84262805ADA30095DA9C /* RatingStickerCollectionCell.swift */; };
 		5E8A84292805AE660095DA9C /* RatingAddressVerifTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A84282805AE660095DA9C /* RatingAddressVerifTblCell.swift */; };
@@ -64,6 +67,9 @@
 		5E74292C27F33A3700AEF294 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		5E74292E27F3441000AEF294 /* ResetPasswordVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVc.swift; sourceTree = "<group>"; };
 		5E84E6BE2809377E00024A1C /* ForgotPasswordVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVc.swift; sourceTree = "<group>"; };
+		5E84E6C02809828A00024A1C /* VerificationOTPVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationOTPVc.swift; sourceTree = "<group>"; };
+		5E84E6C22809857500024A1C /* ChangePasswordVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVc.swift; sourceTree = "<group>"; };
+		5E84E6C42809859E00024A1C /* BackLogInPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackLogInPopUp.swift; sourceTree = "<group>"; };
 		5E8A84242805AD660095DA9C /* RatingVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingVc.swift; sourceTree = "<group>"; };
 		5E8A84262805ADA30095DA9C /* RatingStickerCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStickerCollectionCell.swift; sourceTree = "<group>"; };
 		5E8A84282805AE660095DA9C /* RatingAddressVerifTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingAddressVerifTblCell.swift; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 				5EC3FB0A27EA0AB3006EA26E /* ChooseMethodPopUp.swift */,
 				5EC142F527F1BF980001D1A4 /* SuccessPopUp.swift */,
 				5EC3FB0C27EA0ACA006EA26E /* OTPVerificationVc.swift */,
+				5E84E6C02809828A00024A1C /* VerificationOTPVc.swift */,
 				5EC142F727F1D02B0001D1A4 /* CustomTabBarVC.swift */,
 				5EC142F927F1D04C0001D1A4 /* HomeVc.swift */,
 				5E8A84242805AD660095DA9C /* RatingVc.swift */,
@@ -167,6 +174,8 @@
 				5EC142FD27F1D0830001D1A4 /* ProfileVc.swift */,
 				5EC142FF27F1D0970001D1A4 /* SettingsVc.swift */,
 				5E74292E27F3441000AEF294 /* ResetPasswordVc.swift */,
+				5E84E6C22809857500024A1C /* ChangePasswordVc.swift */,
+				5E84E6C42809859E00024A1C /* BackLogInPopUp.swift */,
 				5E74292A27F332A000AEF294 /* LogoutPopUp.swift */,
 				5E74292827F31CA500AEF294 /* EditProfileVc.swift */,
 				5E74292627F2F01700AEF294 /* SettingTblCell.swift */,
@@ -332,13 +341,16 @@
 				5EC142F827F1D02B0001D1A4 /* CustomTabBarVC.swift in Sources */,
 				5EC1430027F1D0970001D1A4 /* SettingsVc.swift in Sources */,
 				5EC142FA27F1D04C0001D1A4 /* HomeVc.swift in Sources */,
+				5E84E6C52809859E00024A1C /* BackLogInPopUp.swift in Sources */,
 				5E74292B27F332A000AEF294 /* LogoutPopUp.swift in Sources */,
+				5E84E6C12809828A00024A1C /* VerificationOTPVc.swift in Sources */,
 				5EC3FB0B27EA0AB3006EA26E /* ChooseMethodPopUp.swift in Sources */,
 				5EC3FAF527E9F131006EA26E /* SignUpVc.swift in Sources */,
 				5EC142F627F1BF980001D1A4 /* SuccessPopUp.swift in Sources */,
 				5E8A842D2805B0BD0095DA9C /* RatingQuestionTblCell.swift in Sources */,
 				5EC1430227F1E6B20001D1A4 /* MyReviewTblCell.swift in Sources */,
 				5EC3FB0D27EA0ACA006EA26E /* OTPVerificationVc.swift in Sources */,
+				5E84E6C32809857600024A1C /* ChangePasswordVc.swift in Sources */,
 				5EC3FAF127E9F131006EA26E /* AppDelegate.swift in Sources */,
 				5E8A84292805AE660095DA9C /* RatingAddressVerifTblCell.swift in Sources */,
 				5E0DDB9C2806FAF5004C9C22 /* DiscriptionCell.swift in Sources */,

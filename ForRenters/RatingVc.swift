@@ -6,17 +6,22 @@
 //
 
 import UIKit
+import SDWebImage
 
 class RatingVc: UIViewController, ThankYouProtocol {
     func removethankYouObjPop(address: String) {
-        self.dismiss(animated: false, completion:nil)
+        if let tabBarController = self.navigationController?.tabBarController  {
+               tabBarController.selectedIndex = 1
+     navigationController?.popToRootViewController(animated: true)
     }
-    
+    }
     @IBOutlet weak var RatingStickerCVw:UICollectionView!
     @IBOutlet weak var RatingQuestionTblVw:UITableView!
     @IBOutlet weak var RatingAddressVerifTblVw:UITableView!
     @IBOutlet weak var RatingQuestionGroupCVw:UICollectionView!
     @IBOutlet weak var oStickerVw: UIView!
+    var sticlerIconAry = ["awfull","ok","good","great","awesome"]
+    var sticlerNameAry = ["Awful","Ok","Good","Great","Awesome"]
     override func viewDidLoad() {
         super.viewDidLoad()
         addShadow()
@@ -38,17 +43,14 @@ class RatingVc: UIViewController, ThankYouProtocol {
         self.navigationController?.present(nav, animated: false, completion: nil)
     }
 }
-
 //MARK:-->  Collection View Delegate Method
 extension RatingVc: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var aryCount = Int()
         if collectionView ==  RatingStickerCVw{
-            aryCount = 7
+            aryCount = sticlerIconAry.count
         } else  if collectionView == RatingQuestionGroupCVw{
-            aryCount = 7
-        } else{
-            aryCount = 7
+            aryCount = groupAry.count
         }
         return aryCount
     }
@@ -56,11 +58,14 @@ extension RatingVc: UICollectionViewDelegate, UICollectionViewDataSource {
         var cellMain = UICollectionViewCell()
         if collectionView == RatingStickerCVw{
             let cell = RatingStickerCVw.dequeueReusableCell(withReuseIdentifier: "RatingStickerCollectionCell", for: indexPath) as! RatingStickerCollectionCell
+            cell.oStickerIcon.image = UIImage(named:sticlerIconAry[indexPath.item])
+            cell.oStickerLbl.text = sticlerNameAry[indexPath.item]
             // MARK :-- Password View Shadow
             cellMain = cell
         }
         else if collectionView == RatingQuestionGroupCVw{
             let cell = RatingQuestionGroupCVw.dequeueReusableCell(withReuseIdentifier: "RatingQuestionsGroupCollectionCell", for: indexPath) as! RatingQuestionsGroupCollectionCell
+            cell.oGroupLbl.text = groupAry[indexPath.item]
             cellMain = cell
         }
         return cellMain

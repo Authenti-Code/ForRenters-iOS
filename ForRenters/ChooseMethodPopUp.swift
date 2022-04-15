@@ -23,7 +23,7 @@ class ChooseMethodPopUp: UIViewController {
         super.viewDidLoad()
         Email = true
         oEmailVw.layer.backgroundColor = UIColor.black.cgColor
-        oPhoneVw.layer.backgroundColor = UIColor.lightGray.cgColor
+        oPhoneVw.layer.backgroundColor = UIColor.unselectColor.cgColor
         ophoneLbl.textColor = UIColor.black
         oEmailLbl.textColor = UIColor.white
         oMainVw.roundCorners([.topLeft , .topRight], radius: 35)
@@ -39,7 +39,7 @@ class ChooseMethodPopUp: UIViewController {
             phone = true
             Email = false
             oPhoneVw.layer.backgroundColor = UIColor.black.cgColor
-            oEmailVw.layer.backgroundColor = UIColor.lightGray.cgColor
+            oEmailVw.layer.backgroundColor = UIColor.unselectColor.cgColor
         ophoneLbl.textColor = UIColor.white
         oEmailLbl.textColor = UIColor.black
         }
@@ -47,7 +47,7 @@ class ChooseMethodPopUp: UIViewController {
         Email = true
         phone = false
         oEmailVw.layer.backgroundColor = UIColor.black.cgColor
-        oPhoneVw.layer.backgroundColor = UIColor.lightGray.cgColor
+        oPhoneVw.layer.backgroundColor = UIColor.unselectColor.cgColor
         ophoneLbl.textColor = UIColor.black
         oEmailLbl.textColor = UIColor.white
 }

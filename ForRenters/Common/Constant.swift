@@ -33,15 +33,14 @@ enum constants {
 }
 extension UIColor {
     static var unselectColor: UIColor {
-        return UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 1.0)
+        return UIColor(red: 229/255, green: 229/255, blue: 234/255, alpha: 1.0)
     }
         static var selectColor: UIColor {
             return UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1.0)
         }
-    
-   
-    
     }
+
+var groupAry = ["Landlord","Neighborhood","Leasing Agreement","Energy Efficiency","Condition of Home"]
 var latitudValue:String {
     get {
         UserDefaults.standard.value(forKey:"latitude") as? String ?? ""

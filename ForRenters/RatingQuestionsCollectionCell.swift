@@ -9,6 +9,7 @@ import UIKit
 
 class RatingQuestionsGroupCollectionCell: UICollectionViewCell {
     @IBOutlet weak var oMainVw: UIView!
+    @IBOutlet weak var oGroupLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         oMainVw.layer.masksToBounds = true
