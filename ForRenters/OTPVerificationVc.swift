@@ -20,6 +20,7 @@ class OTPVerificationVc: UIViewController,UITextFieldDelegate, SuccessProtocol {
     @IBOutlet weak var oVw2: UIView!
     @IBOutlet weak var oVw3: UIView!
     @IBOutlet weak var oVw4: UIView!
+    var emailAddres:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         addShadow()
@@ -30,12 +31,13 @@ class OTPVerificationVc: UIViewController,UITextFieldDelegate, SuccessProtocol {
         // Do any additional setup after loading the view.
     }
     @IBAction func oVerifyOTPAction(_ sender: Any) {
-        let nav = storyboard?.instantiateViewController(withIdentifier: "SuccessPopUp") as! SuccessPopUp
+      OtpVerifyMethod(otp: "\(oTF1.text ?? "")\(oTF2.text ?? "")\(oTF3.text ?? "")\(oTF4.text ?? "")"){
+          let nav = self.storyboard?.instantiateViewController(withIdentifier: "SuccessPopUp") as! SuccessPopUp
         nav.successObj = self
         self.navigationController?.present(nav, animated: false, completion: nil)
-}
+    }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range:NSRange, replacementString string: String) -> Bool {
-            // Range.length == 1 means,clicking backspace
+        // Range.length == 1 means,clicking backspace
         if (range.length == 0){
             if textField == oTF1 {
                 oTF2?.becomeFirstResponder()
@@ -50,49 +52,46 @@ class OTPVerificationVc: UIViewController,UITextFieldDelegate, SuccessProtocol {
             textField.text? = string
             return false
         }else if (range.length == 1) {
-                if textField == oTF4 {
-                                    oTF3?.becomeFirstResponder()
-                }
-                if textField == oTF3 {
-                                    oTF2?.becomeFirstResponder()
-                }
-                if textField == oTF2 {
-                                    oTF1?.becomeFirstResponder()
-                }
-                if textField == oTF1 {
-                                    oTF1?.resignFirstResponder()
-                }
-                textField.text? = ""
-                return false
+            if textField == oTF4 {
+                oTF3?.becomeFirstResponder()
+            }
+            if textField == oTF3 {
+                oTF2?.becomeFirstResponder()
+            }
+            if textField == oTF2 {
+                oTF1?.becomeFirstResponder()
+            }
+            if textField == oTF1 {
+                oTF1?.resignFirstResponder()
+            }
+            textField.text? = ""
+            return false
         }
         return true
-        }
-}
-extension OTPVerificationVc{
-    func addShadow(){
-        // MARK :-- oVw1 View Shadow
-        oVw1.layer.shadowColor = UIColor.lightGray.cgColor
-        oVw1.layer.shadowOpacity = 0.5
-        oVw1.layer.shadowRadius = 2.5
-        oVw1.layer.shadowOffset = .zero
-        oVw1.layer.masksToBounds = false
-        // MARK :-- oVw2 Shadow
-        oVw2.layer.shadowColor = UIColor.lightGray.cgColor
-        oVw2.layer.shadowOpacity = 0.5
-        oVw2.layer.shadowRadius = 2.5
-        oVw2.layer.shadowOffset = .zero
-        oVw2.layer.masksToBounds = false
-        // MARK :-- oVw3 View Shadow
-        oVw3.layer.shadowColor = UIColor.lightGray.cgColor
-        oVw3.layer.shadowOpacity = 0.5
-        oVw3.layer.shadowRadius = 2.5
-        oVw3.layer.shadowOffset = .zero
-        oVw3.layer.masksToBounds = false
-        // MARK :-- oVw4 View Shadow
-        oVw4.layer.shadowColor = UIColor.lightGray.cgColor
-        oVw4.layer.shadowOpacity = 0.5
-        oVw4.layer.shadowRadius = 2.5
-        oVw4.layer.shadowOffset = .zero
-        oVw4.layer.masksToBounds = false
     }
 }
+}
+    extension OTPVerificationVc {
+        //MARK:--> Hit Choose method For send OTP API
+        func OtpVerifyMethod(otp:String?,completion:@escaping() -> Void) {
+            let Url = "\(Apis.ServerUrl)\(Apis.OtpVerification)"
+            var param = [String : Any]()
+            param = ["email":emailAddres as AnyObject,
+                     "otp":otp as AnyObject]
+           print("param",param)
+            WebProxy.shared.postData(Url, params:param, showIndicator: true, methodType: .post) { (JSON, isSuccess, message) in
+                if isSuccess {
+                    let status = JSON["success"] as? String
+                    if status == "true"{
+                        
+                        completion()
+                    } else{
+                        Proxy.shared.displayStatusCodeAlert(JSON["errorMessage"] as? String ?? "")
+                    }
+                } else {
+                    Proxy.shared.displayStatusCodeAlert(message)
+                }
+            }
+        }
+    }
+

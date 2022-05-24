@@ -4,66 +4,6 @@
 ////
 ////  Created by D R Thakur on 07/12/21.
 ////
-//
-//import Foundation
-//import UIKit
-//extension UIView {
-//    @IBInspectable var cornerRadius: CGFloat {
-//        get {
-//            return layer.cornerRadius
-//        }
-//        set {
-//            layer.cornerRadius = newValue
-//            layer.masksToBounds = newValue > 0
-//        }
-//    }
-//}
-//extension UITextField{
-//    @IBInspectable var placeHolderColor: UIColor? {
-//        get {
-//            return self.placeHolderColor
-//        }
-//        set {
-//            self.attributedPlaceholder = NSAttributedString(string:self.placeholder != nil ? self.placeholder! : "", attributes:[NSAttributedString.Key.foregroundColor: newValue!])
-//        }
-//    }
-//}
-////Half Shadow View
-
-//var isBlank : Bool {
-//    return (self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
-//}
-//
-//var removingWhitespacesAndNewlines: String {
-//    return components(separatedBy: .whitespacesAndNewlines).joined()
-//}
-//
-//var length: Int { return self.count }
-//
-//func trimmed() -> String {
-//    return self.trimmingCharacters(in: .whitespaces)
-//}
-//func isEmail() throws -> Bool {
-//    let regex = try NSRegularExpression(pattern: "^[A-Z0-9._%+-]+@[A-Z0-9-]+\\.[A-Z]{2,4}$", options: [.caseInsensitive])
-//    return regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count)) != nil
-//}
-//
-//func isAlphaSpace() throws -> Bool {
-//    let regex = try NSRegularExpression(pattern: "^[A-Za-z ]*$", options: [])
-//    return regex.firstMatch(in: self, options: [], range: NSMakeRange(0, self.count)) != nil
-//}
-//
-////    func isNumeric() throws -> Bool {
-////        let regex = try NSRegularExpression(pattern: "^[0-9]*$", options: [])
-////
-////        return regex.firstMatch(in: self, options: [], range: NSMakeRange(0, self.count)) != nil
-////    }
-//
-//func isRegistrationNumber() throws -> Bool {
-//    let regex = try NSRegularExpression(pattern: "^[A-Za-z0-9 ]*$", options: [])
-//
-//    return regex.firstMatch(in: self, options: [], range: NSMakeRange(0, self.count)) != nil
-//}
 
 import Foundation
 import UIKit
@@ -84,41 +24,6 @@ extension UIView {
         }
     }
 }
-//extension UITextField{
-//
-//    @IBInspectable var doneAccessory: Bool{
-//        get{
-//            return self.doneAccessory
-//        }
-//        set (hasDone) {
-//            if hasDone{
-//                addDoneButtonOnKeyboard()
-//            }
-//        }
-//    }
-//
-//    func addDoneButtonOnKeyboard()
-//    {
-//        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
-//        doneToolbar.barStyle = .default
-//
-//        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-//        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
-//
-//        let items = [flexSpace, done]
-//        doneToolbar.items = items
-//        doneToolbar.sizeToFit()
-//        doneToolbar.tintColor = .black
-////        doneToolbar.inputAccessoryView = keyboardDoneButtonShow
-//
-//        self.inputAccessoryView = doneToolbar
-//    }
-//
-//    @objc func doneButtonAction()
-//    {
-//        self.resignFirstResponder()
-//    }
-//}
 extension UIView {
     func addShadow(offset: CGSize, color: UIColor, radius: CGFloat, opacity: Float) {
         layer.masksToBounds = false
@@ -131,18 +36,6 @@ extension UIView {
         backgroundColor = nil
         layer.backgroundColor =  backgroundCGColor
     }
-//    func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
-//        if #available(iOS 11.0, *) {
-//          self.clipsToBounds = true
-//          self.layer.cornerRadius = radius
-//          self.layer.maskedCorners = CACornerMask(rawValue: corners.rawValue)
-//        } else {
-//          let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-//          let mask = CAShapeLayer()
-//          mask.path = path.cgPath
-//          self.layer.mask = mask
-//        }
-//    }
 }
 extension UITextField{
     @IBInspectable var placeHolderColor: UIColor? {
@@ -256,26 +149,7 @@ extension UINavigationController {
 //MARK-> Validations
 public extension String
 {
-    /*func toJSON() -> JSON
-     {
-     //        guard let data = self.data(using: .utf8, allowLossyConversion: false) else { return JSON() }; return try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-     
-     }*/
     
-    /*
-     
-     public static String extractYTId(String ytUrl) {
-     String vId = null;
-     Pattern pattern = Pattern.compile(
-     "^https?://.*(?:youtu.be/|v/|u/\\w/|embed/|watch?v=)([^#&?]*).*$",
-     Pattern.CASE_INSENSITIVE);
-     Matcher matcher = pattern.matcher(ytUrl);
-     if (matcher.matches()){
-     vId = matcher.group(1);
-     }
-     return vId;
-     }
-     */
     var isBlank : Bool {
         return (self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
     }
@@ -298,20 +172,11 @@ public extension String
         let regex = try NSRegularExpression(pattern: "^[A-Za-z ]*$", options: [])
         return regex.firstMatch(in: self, options: [], range: NSMakeRange(0, self.count)) != nil
     }
-    
-    //    func isNumeric() throws -> Bool {
-    //        let regex = try NSRegularExpression(pattern: "^[0-9]*$", options: [])
-    //
-    //        return regex.firstMatch(in: self, options: [], range: NSMakeRange(0, self.count)) != nil
-    //    }
-    
     func isRegistrationNumber() throws -> Bool {
         let regex = try NSRegularExpression(pattern: "^[A-Za-z0-9 ]*$", options: [])
         
         return regex.firstMatch(in: self, options: [], range: NSMakeRange(0, self.count)) != nil
     }
-    
-    
 }
 
 // MARK: - Extension

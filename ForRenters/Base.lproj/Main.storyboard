@@ -715,6 +715,9 @@
                                                                         </constraints>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" image="password-hide"/>
+                                                                        <connections>
+                                                                            <action selector="passwordEyeBtnAction:" destination="oi5-2J-VoH" eventType="touchUpInside" id="yi9-NQ-0wR"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -785,6 +788,9 @@
                                                                         </constraints>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" image="password-hide"/>
+                                                                        <connections>
+                                                                            <action selector="cPasswordEyeBtnAction:" destination="oi5-2J-VoH" eventType="touchUpInside" id="wH6-bT-Urs"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -922,12 +928,18 @@
                     </view>
                     <size key="freeformSize" width="375" height="930"/>
                     <connections>
+                        <outlet property="LastNameTF" destination="nj3-be-cwB" id="mcP-Vk-OYE"/>
+                        <outlet property="confirmPasswordTF" destination="HM0-lw-K4z" id="t00-Ba-0mn"/>
+                        <outlet property="emailTF" destination="H3X-gX-6It" id="8tn-Ha-phF"/>
+                        <outlet property="firstNameTF" destination="Rd2-BI-mOo" id="ocg-by-xM8"/>
                         <outlet property="oCPasswordVw" destination="S14-HG-7ao" id="SP0-VV-b8Z"/>
                         <outlet property="oEmailVw" destination="aQq-qi-IUK" id="5SJ-1E-L62"/>
                         <outlet property="oFNameVw" destination="U9B-DI-Blg" id="WF7-Rb-Rtm"/>
                         <outlet property="oLNameVw" destination="NSu-8K-XUf" id="w8R-7O-Jg0"/>
                         <outlet property="oPasswordVw" destination="R08-kx-FJO" id="0he-e1-TBi"/>
                         <outlet property="oPhoneVw" destination="od6-ep-nVv" id="nje-8b-3MS"/>
+                        <outlet property="passwordTF" destination="MtE-6J-ycG" id="ZBz-xz-D4Y"/>
+                        <outlet property="phoneTF" destination="fNK-fX-Q6x" id="iUP-4x-SlH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6TH-wx-LXe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

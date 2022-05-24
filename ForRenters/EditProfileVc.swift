@@ -23,7 +23,6 @@ class EditProfileVc: UIViewController {
         super.viewDidLoad()
         addShadow()
         imgPickerCont.delegate = self
-       
     }
     @IBAction func submitBtnAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: false)

@@ -22,25 +22,33 @@ class LogoutPopUp: UIViewController {
         self.dismiss(animated: false, completion:nil)
     }
     @IBAction func oYesBtnAction(_ sender: Any) {
+        logOutApi{
         self.dismiss(animated: false, completion: {
         self.logoutObj?.removelogoutObjPop(address: "good")
         })
+        }
     }
 }
-extension LogoutPopUp{
-    func addshadow(){
-        // MARK :-- Confirm Password View Shadow
-        oNoBtn.layer.shadowColor = UIColor.gray.cgColor
-        oNoBtn.layer.shadowOpacity = 0.3
-        oNoBtn.layer.shadowRadius = 4.0
-        oNoBtn.layer.shadowOffset = .zero
-        oNoBtn.layer.masksToBounds = false
-        // MARK :-- Confirm Password View Shadow
-        oYesBtn.layer.shadowColor = UIColor.gray.cgColor
-        oYesBtn.layer.shadowOpacity = 0.3
-        oYesBtn.layer.shadowRadius = 4.0
-        oYesBtn.layer.shadowOffset = .zero
-        oYesBtn.layer.masksToBounds = false
+extension LogoutPopUp {
+    //MARK:--> Hit LogOut Api Handling
+    func logOutApi(completion:@escaping() -> Void) {
+        let Url = "\(Apis.ServerUrl)\(Apis.logOut)"
+        var param = [String : Any]()
+        param = ["":""]
+       print("param",param)
+        WebProxy.shared.postData(Url, params:param, showIndicator: true, methodType: .post) { (JSON, isSuccess, message) in
+            if isSuccess {
+                let status = JSON["success"] as? String
+                if status == "true"{
+                    accessToken = ""
+                    completion()
+                } else{
+                    Proxy.shared.displayStatusCodeAlert(JSON["errorMessage"] as? String ?? "")
+                }
+            } else {
+                Proxy.shared.displayStatusCodeAlert(message)
+            }
+        }
     }
+}
 
-}

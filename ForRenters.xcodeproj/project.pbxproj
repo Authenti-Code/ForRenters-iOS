@@ -30,6 +30,14 @@
 		5E8A84292805AE660095DA9C /* RatingAddressVerifTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A84282805AE660095DA9C /* RatingAddressVerifTblCell.swift */; };
 		5E8A842B2805AEAF0095DA9C /* RatingQuestionsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A842A2805AEAF0095DA9C /* RatingQuestionsCollectionCell.swift */; };
 		5E8A842D2805B0BD0095DA9C /* RatingQuestionTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A842C2805B0BD0095DA9C /* RatingQuestionTblCell.swift */; };
+		5EA3EB61283C9C9700A4E85F /* ShadowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3EB60283C9C9700A4E85F /* ShadowExtension.swift */; };
+		5EA3EB65283C9E2700A4E85F /* SignUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3EB64283C9E2700A4E85F /* SignUpVM.swift */; };
+		5EA3EB67283C9E7200A4E85F /* WebProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3EB66283C9E7200A4E85F /* WebProxy.swift */; };
+		5EA3EB69283C9EA100A4E85F /* Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3EB68283C9EA100A4E85F /* Proxy.swift */; };
+		5EA3EB6B283C9EF400A4E85F /* AppAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3EB6A283C9EF400A4E85F /* AppAlerts.swift */; };
+		5EA3EB6D283CAE9600A4E85F /* DataMedel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3EB6C283CAE9600A4E85F /* DataMedel.swift */; };
+		5EA3EB6F283CC58700A4E85F /* LogInVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3EB6E283CC58700A4E85F /* LogInVM.swift */; };
+		5EA3EB71283CDD8800A4E85F /* RootControllerProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3EB70283CDD8800A4E85F /* RootControllerProxy.swift */; };
 		5EC142F627F1BF980001D1A4 /* SuccessPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC142F527F1BF980001D1A4 /* SuccessPopUp.swift */; };
 		5EC142F827F1D02B0001D1A4 /* CustomTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC142F727F1D02B0001D1A4 /* CustomTabBarVC.swift */; };
 		5EC142FA27F1D04C0001D1A4 /* HomeVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC142F927F1D04C0001D1A4 /* HomeVc.swift */; };
@@ -75,6 +83,14 @@
 		5E8A84282805AE660095DA9C /* RatingAddressVerifTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingAddressVerifTblCell.swift; sourceTree = "<group>"; };
 		5E8A842A2805AEAF0095DA9C /* RatingQuestionsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingQuestionsCollectionCell.swift; sourceTree = "<group>"; };
 		5E8A842C2805B0BD0095DA9C /* RatingQuestionTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingQuestionTblCell.swift; sourceTree = "<group>"; };
+		5EA3EB60283C9C9700A4E85F /* ShadowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowExtension.swift; sourceTree = "<group>"; };
+		5EA3EB64283C9E2700A4E85F /* SignUpVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVM.swift; sourceTree = "<group>"; };
+		5EA3EB66283C9E7200A4E85F /* WebProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebProxy.swift; sourceTree = "<group>"; };
+		5EA3EB68283C9EA100A4E85F /* Proxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proxy.swift; sourceTree = "<group>"; };
+		5EA3EB6A283C9EF400A4E85F /* AppAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlerts.swift; sourceTree = "<group>"; };
+		5EA3EB6C283CAE9600A4E85F /* DataMedel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMedel.swift; sourceTree = "<group>"; };
+		5EA3EB6E283CC58700A4E85F /* LogInVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVM.swift; sourceTree = "<group>"; };
+		5EA3EB70283CDD8800A4E85F /* RootControllerProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootControllerProxy.swift; sourceTree = "<group>"; };
 		5EC142F527F1BF980001D1A4 /* SuccessPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPopUp.swift; sourceTree = "<group>"; };
 		5EC142F727F1D02B0001D1A4 /* CustomTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarVC.swift; sourceTree = "<group>"; };
 		5EC142F927F1D04C0001D1A4 /* HomeVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVc.swift; sourceTree = "<group>"; };
@@ -116,9 +132,24 @@
 			isa = PBXGroup;
 			children = (
 				5EC3FB0827E9F74C006EA26E /* extension.swift */,
+				5EA3EB60283C9C9700A4E85F /* ShadowExtension.swift */,
+				5EA3EB66283C9E7200A4E85F /* WebProxy.swift */,
+				5EA3EB68283C9EA100A4E85F /* Proxy.swift */,
+				5EA3EB6C283CAE9600A4E85F /* DataMedel.swift */,
+				5EA3EB70283CDD8800A4E85F /* RootControllerProxy.swift */,
+				5EA3EB6A283C9EF400A4E85F /* AppAlerts.swift */,
 				5E74292C27F33A3700AEF294 /* Constant.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		5EA3EB63283C9DEB00A4E85F /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				5EA3EB64283C9E2700A4E85F /* SignUpVM.swift */,
+				5EA3EB6E283CC58700A4E85F /* LogInVM.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		5EC3FAE427E9F131006EA26E = {
@@ -142,6 +173,7 @@
 		5EC3FAEF27E9F131006EA26E /* ForRenters */ = {
 			isa = PBXGroup;
 			children = (
+				5EA3EB63283C9DEB00A4E85F /* View Model */,
 				5E3910BF27F47492004298CA /* Common */,
 				5EC3FB0627E9F20F006EA26E /* Font */,
 				5EC3FB0427E9F1DA006EA26E /* LogInVc.swift */,
@@ -339,8 +371,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EC142F827F1D02B0001D1A4 /* CustomTabBarVC.swift in Sources */,
+				5EA3EB65283C9E2700A4E85F /* SignUpVM.swift in Sources */,
 				5EC1430027F1D0970001D1A4 /* SettingsVc.swift in Sources */,
 				5EC142FA27F1D04C0001D1A4 /* HomeVc.swift in Sources */,
+				5EA3EB61283C9C9700A4E85F /* ShadowExtension.swift in Sources */,
 				5E84E6C52809859E00024A1C /* BackLogInPopUp.swift in Sources */,
 				5E74292B27F332A000AEF294 /* LogoutPopUp.swift in Sources */,
 				5E84E6C12809828A00024A1C /* VerificationOTPVc.swift in Sources */,
@@ -351,16 +385,20 @@
 				5EC1430227F1E6B20001D1A4 /* MyReviewTblCell.swift in Sources */,
 				5EC3FB0D27EA0ACA006EA26E /* OTPVerificationVc.swift in Sources */,
 				5E84E6C32809857600024A1C /* ChangePasswordVc.swift in Sources */,
+				5EA3EB71283CDD8800A4E85F /* RootControllerProxy.swift in Sources */,
 				5EC3FAF127E9F131006EA26E /* AppDelegate.swift in Sources */,
 				5E8A84292805AE660095DA9C /* RatingAddressVerifTblCell.swift in Sources */,
 				5E0DDB9C2806FAF5004C9C22 /* DiscriptionCell.swift in Sources */,
 				5EC142FC27F1D0700001D1A4 /* MyReviewsVc.swift in Sources */,
 				5E74292D27F33A3700AEF294 /* Constant.swift in Sources */,
+				5EA3EB6F283CC58700A4E85F /* LogInVM.swift in Sources */,
 				5E597C6827F48BEE00F9F4B3 /* ReviewsTblCell.swift in Sources */,
 				5E8A842B2805AEAF0095DA9C /* RatingQuestionsCollectionCell.swift in Sources */,
+				5EA3EB6B283C9EF400A4E85F /* AppAlerts.swift in Sources */,
 				5E8A84252805AD660095DA9C /* RatingVc.swift in Sources */,
 				5E8A84272805ADA30095DA9C /* RatingStickerCollectionCell.swift in Sources */,
 				5E3910C327F48091004298CA /* ReviewCollectionCell.swift in Sources */,
+				5EA3EB67283C9E7200A4E85F /* WebProxy.swift in Sources */,
 				5E0DDB9E2806FB1E004C9C22 /* ListingCell.swift in Sources */,
 				5E74292727F2F01700AEF294 /* SettingTblCell.swift in Sources */,
 				5EC142FE27F1D0830001D1A4 /* ProfileVc.swift in Sources */,
@@ -372,9 +410,11 @@
 				5E84E6BF2809377E00024A1C /* ForgotPasswordVc.swift in Sources */,
 				5E0DDB9A2806FAB4004C9C22 /* DetailsCell.swift in Sources */,
 				5E3910C127F48069004298CA /* ReviewsVc.swift in Sources */,
+				5EA3EB69283C9EA100A4E85F /* Proxy.swift in Sources */,
 				5EC3FB0927E9F74C006EA26E /* extension.swift in Sources */,
 				5E74292927F31CA500AEF294 /* EditProfileVc.swift in Sources */,
 				5EC3FAF327E9F131006EA26E /* SceneDelegate.swift in Sources */,
+				5EA3EB6D283CAE9600A4E85F /* DataMedel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

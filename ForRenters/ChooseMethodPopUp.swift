@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ChooseSendProtocol{
-    func removechooseSendOtpObjPop(address: String)
+    func removechooseSendOtpObjPop(mail: String)
 }
 class ChooseMethodPopUp: UIViewController {
     @IBOutlet weak var oMainVw: UIView!
@@ -19,6 +19,9 @@ class ChooseMethodPopUp: UIViewController {
     var chooseSendOtpObj:ChooseSendProtocol?
     var phone:Bool = false
     var Email:Bool = false
+    var email:String?
+    var phoneNumber:String?
+    var method:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         Email = true
@@ -30,10 +33,11 @@ class ChooseMethodPopUp: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func oContinueBtnAction(_ sender: Any) {
-        
+        chooseSignUp{
         self.dismiss(animated: true, completion: {
-        self.chooseSendOtpObj?.removechooseSendOtpObjPop(address: "good")
+            self.chooseSendOtpObj?.removechooseSendOtpObjPop(mail: self.email ?? "")
         })
+        }
 }
     @IBAction func oPhoneBtnAction(_ sender: Any) {
             phone = true
@@ -46,9 +50,35 @@ class ChooseMethodPopUp: UIViewController {
     @IBAction func oEmailBtnAction(_ sender: Any) {
         Email = true
         phone = false
+        method = "email"
+        email = userdataObj.email
         oEmailVw.layer.backgroundColor = UIColor.black.cgColor
         oPhoneVw.layer.backgroundColor = UIColor.unselectColor.cgColor
         ophoneLbl.textColor = UIColor.black
         oEmailLbl.textColor = UIColor.white
 }
 }
+extension ChooseMethodPopUp {
+    //MARK:--> Hit Choose method For send OTP API
+    func chooseSignUp(completion:@escaping() -> Void) {
+        let Url = "\(Apis.ServerUrl)\(Apis.chooseSignUpStep)"
+        var param = [String : Any]()
+        param = ["verification_method":method as AnyObject,
+                 "email":email as AnyObject]
+       print("param",param)
+        WebProxy.shared.postData(Url, params:param, showIndicator: true, methodType: .post) { (JSON, isSuccess, message) in
+            if isSuccess {
+                let status = JSON["success"] as? String
+                if status == "true"{
+                    
+                    completion()
+                } else{
+                    Proxy.shared.displayStatusCodeAlert(JSON["errorMessage"] as? String ?? "")
+                }
+            } else {
+                Proxy.shared.displayStatusCodeAlert(message)
+            }
+        }
+    }
+}
+

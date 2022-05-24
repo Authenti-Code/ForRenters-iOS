@@ -11,14 +11,16 @@ import GoogleMaps
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Thread.sleep(forTimeInterval: 2)
         GMSServices.provideAPIKey("AIzaSyCMxlBBdK_NSXwvNeH51vLDGbOwIoi-y2Q")
         IQKeyboardManager.shared.enable = true
+       
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         return true
     }
-    
     // MARK: UISceneSession Lifecycle
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.

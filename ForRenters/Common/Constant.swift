@@ -29,7 +29,14 @@ enum constants {
     static let  Pmismatched    =  " Password Mismatched"
     static let  sendOtp    =  "OTP sent successfully"
     static let strongPassword =   "Your password must be at least 8 characters and contain at least 1 number and 1 capital letter."
-//    static let  Discription    =  "The post description field is required."
+}
+//MARK:- App Header
+func headers() ->  [String:String] {
+    let header = [
+        "Authorization":"Bearer \(accessToken)",
+        "Accept":"application/json"
+    ]
+    return header
 }
 extension UIColor {
     static var unselectColor: UIColor {
@@ -39,8 +46,18 @@ extension UIColor {
             return UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1.0)
         }
     }
-
 var groupAry = ["Landlord","Neighborhood","Leasing Agreement","Energy Efficiency","Condition of Home"]
+enum SignUp {
+    struct Request {
+        var firstname: String?,
+            lastName: String?,
+            email: String?,
+            phone:String?,
+            password:String?,
+            confirmPassword:String?
+    }
+}
+// Declaration latitude Value
 var latitudValue:String {
     get {
         UserDefaults.standard.value(forKey:"latitude") as? String ?? ""
@@ -49,6 +66,7 @@ var latitudValue:String {
         UserDefaults.standard.setValue(newValue, forKey:"latitude")
     }
 }
+// Declaration longitude Value
 var longitudeValue:String {
     get {
         UserDefaults.standard.value(forKey:"longitude") as? String ?? ""
@@ -57,3 +75,21 @@ var longitudeValue:String {
         UserDefaults.standard.setValue(newValue, forKey:"longitude")
     }
 }
+// Declaration accesstoken
+var accessToken: String{
+    get {
+        return UserDefaults.standard.value(forKey: "accessToken") as? String ?? ""
+    }
+    set {
+        UserDefaults.standard.setValue(newValue, forKey:"accessToken")
+    }
+}
+var Signup_step: Int?{
+    get {
+        return UserDefaults.standard.value(forKey: "Signup_step") as? Int? ?? 0
+    }
+    set {
+        UserDefaults.standard.setValue(newValue, forKey:"Signup_step")
+    }
+}
+

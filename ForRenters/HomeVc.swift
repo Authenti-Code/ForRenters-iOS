@@ -13,7 +13,6 @@ class HomeVc: UIViewController ,CLLocationManagerDelegate, GMSMapViewDelegate{
     @IBOutlet weak var oSearchVw:UIView!
     var locationManager = CLLocationManager()
 //    var didFindMyLocation = false
-
     override func viewDidLoad() {
         super.viewDidLoad()
         oSearchVw.layer.shadowColor = UIColor.red.cgColor
@@ -40,15 +39,10 @@ class HomeVc: UIViewController ,CLLocationManagerDelegate, GMSMapViewDelegate{
            locationManager.requestWhenInUseAuthorization()
            locationManager.startUpdatingLocation()
        }
-
        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
            var location = locationManager.location?.coordinate
-
            cameraMoveToLocation(toLocation: location)
-
        }
-
        func cameraMoveToLocation(toLocation: CLLocationCoordinate2D?) {
            if toLocation != nil {
                mapView.camera = GMSCameraPosition.camera(withTarget: toLocation!, zoom: 15)
