@@ -38,6 +38,11 @@
 		5EA3EB6D283CAE9600A4E85F /* DataMedel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3EB6C283CAE9600A4E85F /* DataMedel.swift */; };
 		5EA3EB6F283CC58700A4E85F /* LogInVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3EB6E283CC58700A4E85F /* LogInVM.swift */; };
 		5EA3EB71283CDD8800A4E85F /* RootControllerProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3EB70283CDD8800A4E85F /* RootControllerProxy.swift */; };
+		5EA41EC02844FE1A00708FFD /* PrivacyPolicyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA41EBF2844FE1A00708FFD /* PrivacyPolicyVC.swift */; };
+		5EA41EC22844FE2E00708FFD /* TermOfUseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA41EC12844FE2E00708FFD /* TermOfUseVC.swift */; };
+		5EA41EC42844FE4F00708FFD /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA41EC32844FE4F00708FFD /* AboutUsVC.swift */; };
+		5EB2D1E52844B30A00A93597 /* SurePasswordPopUpVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB2D1E42844B30900A93597 /* SurePasswordPopUpVc.swift */; };
+		5EB2D1E72844B59700A93597 /* SuccessPasswordPopUpVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB2D1E62844B59700A93597 /* SuccessPasswordPopUpVc.swift */; };
 		5EC142F627F1BF980001D1A4 /* SuccessPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC142F527F1BF980001D1A4 /* SuccessPopUp.swift */; };
 		5EC142F827F1D02B0001D1A4 /* CustomTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC142F727F1D02B0001D1A4 /* CustomTabBarVC.swift */; };
 		5EC142FA27F1D04C0001D1A4 /* HomeVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC142F927F1D04C0001D1A4 /* HomeVc.swift */; };
@@ -46,7 +51,6 @@
 		5EC1430027F1D0970001D1A4 /* SettingsVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC142FF27F1D0970001D1A4 /* SettingsVc.swift */; };
 		5EC1430227F1E6B20001D1A4 /* MyReviewTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1430127F1E6B20001D1A4 /* MyReviewTblCell.swift */; };
 		5EC3FAF127E9F131006EA26E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC3FAF027E9F131006EA26E /* AppDelegate.swift */; };
-		5EC3FAF327E9F131006EA26E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC3FAF227E9F131006EA26E /* SceneDelegate.swift */; };
 		5EC3FAF527E9F131006EA26E /* SignUpVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC3FAF427E9F131006EA26E /* SignUpVc.swift */; };
 		5EC3FAF827E9F131006EA26E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EC3FAF627E9F131006EA26E /* Main.storyboard */; };
 		5EC3FAFA27E9F134006EA26E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EC3FAF927E9F134006EA26E /* Assets.xcassets */; };
@@ -91,6 +95,11 @@
 		5EA3EB6C283CAE9600A4E85F /* DataMedel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMedel.swift; sourceTree = "<group>"; };
 		5EA3EB6E283CC58700A4E85F /* LogInVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVM.swift; sourceTree = "<group>"; };
 		5EA3EB70283CDD8800A4E85F /* RootControllerProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootControllerProxy.swift; sourceTree = "<group>"; };
+		5EA41EBF2844FE1A00708FFD /* PrivacyPolicyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyVC.swift; sourceTree = "<group>"; };
+		5EA41EC12844FE2E00708FFD /* TermOfUseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermOfUseVC.swift; sourceTree = "<group>"; };
+		5EA41EC32844FE4F00708FFD /* AboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
+		5EB2D1E42844B30900A93597 /* SurePasswordPopUpVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurePasswordPopUpVc.swift; sourceTree = "<group>"; };
+		5EB2D1E62844B59700A93597 /* SuccessPasswordPopUpVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPasswordPopUpVc.swift; sourceTree = "<group>"; };
 		5EC142F527F1BF980001D1A4 /* SuccessPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPopUp.swift; sourceTree = "<group>"; };
 		5EC142F727F1D02B0001D1A4 /* CustomTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarVC.swift; sourceTree = "<group>"; };
 		5EC142F927F1D04C0001D1A4 /* HomeVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVc.swift; sourceTree = "<group>"; };
@@ -100,7 +109,6 @@
 		5EC1430127F1E6B20001D1A4 /* MyReviewTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewTblCell.swift; sourceTree = "<group>"; };
 		5EC3FAED27E9F131006EA26E /* ForRenters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForRenters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EC3FAF027E9F131006EA26E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5EC3FAF227E9F131006EA26E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5EC3FAF427E9F131006EA26E /* SignUpVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVc.swift; sourceTree = "<group>"; };
 		5EC3FAF727E9F131006EA26E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5EC3FAF927E9F134006EA26E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -178,7 +186,6 @@
 				5EC3FB0627E9F20F006EA26E /* Font */,
 				5EC3FB0427E9F1DA006EA26E /* LogInVc.swift */,
 				5EC3FAF027E9F131006EA26E /* AppDelegate.swift */,
-				5EC3FAF227E9F131006EA26E /* SceneDelegate.swift */,
 				5EC3FAF427E9F131006EA26E /* SignUpVc.swift */,
 				5EC3FB0A27EA0AB3006EA26E /* ChooseMethodPopUp.swift */,
 				5EC142F527F1BF980001D1A4 /* SuccessPopUp.swift */,
@@ -207,8 +214,13 @@
 				5EC142FF27F1D0970001D1A4 /* SettingsVc.swift */,
 				5E74292E27F3441000AEF294 /* ResetPasswordVc.swift */,
 				5E84E6C22809857500024A1C /* ChangePasswordVc.swift */,
+				5EB2D1E62844B59700A93597 /* SuccessPasswordPopUpVc.swift */,
+				5EB2D1E42844B30900A93597 /* SurePasswordPopUpVc.swift */,
 				5E84E6C42809859E00024A1C /* BackLogInPopUp.swift */,
 				5E74292A27F332A000AEF294 /* LogoutPopUp.swift */,
+				5EA41EBF2844FE1A00708FFD /* PrivacyPolicyVC.swift */,
+				5EA41EC12844FE2E00708FFD /* TermOfUseVC.swift */,
+				5EA41EC32844FE4F00708FFD /* AboutUsVC.swift */,
 				5E74292827F31CA500AEF294 /* EditProfileVc.swift */,
 				5E74292627F2F01700AEF294 /* SettingTblCell.swift */,
 				5EC3FAF627E9F131006EA26E /* Main.storyboard */,
@@ -385,7 +397,10 @@
 				5EC1430227F1E6B20001D1A4 /* MyReviewTblCell.swift in Sources */,
 				5EC3FB0D27EA0ACA006EA26E /* OTPVerificationVc.swift in Sources */,
 				5E84E6C32809857600024A1C /* ChangePasswordVc.swift in Sources */,
+				5EA41EC22844FE2E00708FFD /* TermOfUseVC.swift in Sources */,
 				5EA3EB71283CDD8800A4E85F /* RootControllerProxy.swift in Sources */,
+				5EA41EC42844FE4F00708FFD /* AboutUsVC.swift in Sources */,
+				5EB2D1E52844B30A00A93597 /* SurePasswordPopUpVc.swift in Sources */,
 				5EC3FAF127E9F131006EA26E /* AppDelegate.swift in Sources */,
 				5E8A84292805AE660095DA9C /* RatingAddressVerifTblCell.swift in Sources */,
 				5E0DDB9C2806FAF5004C9C22 /* DiscriptionCell.swift in Sources */,
@@ -397,6 +412,8 @@
 				5EA3EB6B283C9EF400A4E85F /* AppAlerts.swift in Sources */,
 				5E8A84252805AD660095DA9C /* RatingVc.swift in Sources */,
 				5E8A84272805ADA30095DA9C /* RatingStickerCollectionCell.swift in Sources */,
+				5EB2D1E72844B59700A93597 /* SuccessPasswordPopUpVc.swift in Sources */,
+				5EA41EC02844FE1A00708FFD /* PrivacyPolicyVC.swift in Sources */,
 				5E3910C327F48091004298CA /* ReviewCollectionCell.swift in Sources */,
 				5EA3EB67283C9E7200A4E85F /* WebProxy.swift in Sources */,
 				5E0DDB9E2806FB1E004C9C22 /* ListingCell.swift in Sources */,
@@ -413,7 +430,6 @@
 				5EA3EB69283C9EA100A4E85F /* Proxy.swift in Sources */,
 				5EC3FB0927E9F74C006EA26E /* extension.swift in Sources */,
 				5E74292927F31CA500AEF294 /* EditProfileVc.swift in Sources */,
-				5EC3FAF327E9F131006EA26E /* SceneDelegate.swift in Sources */,
 				5EA3EB6D283CAE9600A4E85F /* DataMedel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,15 +26,19 @@ class OTPVerificationVc: UIViewController,UITextFieldDelegate, SuccessProtocol {
         addShadow()
         oTF1.delegate = self
         oTF2.delegate = self
-        oTF3.delegate  = self
+        oTF3.delegate = self
         oTF4.delegate = self
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
     @IBAction func oVerifyOTPAction(_ sender: Any) {
-      OtpVerifyMethod(otp: "\(oTF1.text ?? "")\(oTF2.text ?? "")\(oTF3.text ?? "")\(oTF4.text ?? "")"){
-          let nav = self.storyboard?.instantiateViewController(withIdentifier: "SuccessPopUp") as! SuccessPopUp
-        nav.successObj = self
-        self.navigationController?.present(nav, animated: false, completion: nil)
+        OtpVerifyMethod(otp: "\(oTF1.text ?? "")\(oTF2.text ?? "")\(oTF3.text ?? "")\(oTF4.text ?? "")"){
+            let nav = self.storyboard?.instantiateViewController(withIdentifier: "SuccessPopUp") as! SuccessPopUp
+            nav.successObj = self
+            self.navigationController?.present(nav, animated: false, completion: nil)
+        }
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range:NSRange, replacementString string: String) -> Bool {
         // Range.length == 1 means,clicking backspace
@@ -70,28 +74,27 @@ class OTPVerificationVc: UIViewController,UITextFieldDelegate, SuccessProtocol {
         return true
     }
 }
-}
-    extension OTPVerificationVc {
-        //MARK:--> Hit Choose method For send OTP API
-        func OtpVerifyMethod(otp:String?,completion:@escaping() -> Void) {
-            let Url = "\(Apis.ServerUrl)\(Apis.OtpVerification)"
-            var param = [String : Any]()
-            param = ["email":emailAddres as AnyObject,
-                     "otp":otp as AnyObject]
-           print("param",param)
-            WebProxy.shared.postData(Url, params:param, showIndicator: true, methodType: .post) { (JSON, isSuccess, message) in
-                if isSuccess {
-                    let status = JSON["success"] as? String
-                    if status == "true"{
-                        
-                        completion()
-                    } else{
-                        Proxy.shared.displayStatusCodeAlert(JSON["errorMessage"] as? String ?? "")
-                    }
-                } else {
-                    Proxy.shared.displayStatusCodeAlert(message)
+extension OTPVerificationVc {
+    //MARK:--> Hit Choose method For send OTP API
+    func OtpVerifyMethod(otp:String?,completion:@escaping() -> Void) {
+        let Url = "\(Apis.ServerUrl)\(Apis.OtpVerification)"
+        var param = [String : Any]()
+        param = ["email":emailAddres as AnyObject,
+                 "otp":otp as AnyObject]
+        print("param",param)
+        WebProxy.shared.postData(Url, params:param, showIndicator: true, methodType: .post) { (JSON, isSuccess, message) in
+            if isSuccess {
+                let status = JSON["success"] as? String
+                if status == "true"{
+                    
+                    completion()
+                } else{
+                    Proxy.shared.displayStatusCodeAlert(JSON["errorMessage"] as? String ?? "")
                 }
+            } else {
+                Proxy.shared.displayStatusCodeAlert(message)
             }
         }
     }
+}
 

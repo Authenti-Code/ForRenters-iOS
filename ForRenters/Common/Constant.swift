@@ -84,12 +84,21 @@ var accessToken: String{
         UserDefaults.standard.setValue(newValue, forKey:"accessToken")
     }
 }
-var Signup_step: Int?{
+var Signup_step: String?{
     get {
-        return UserDefaults.standard.value(forKey: "Signup_step") as? Int? ?? 0
+        return UserDefaults.standard.value(forKey: "Signup_step") as? String? ?? ""
     }
     set {
         UserDefaults.standard.setValue(newValue, forKey:"Signup_step")
     }
 }
+var ProfileImg: String?{
+    get {
+        return UserDefaults.standard.value(forKey: "ProfileImg") as? String? ?? ""
+    }
+    set {
+        UserDefaults.standard.setValue(newValue, forKey:"ProfileImg")
+    }
+}
+
 

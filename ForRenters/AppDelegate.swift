@@ -11,24 +11,24 @@ import GoogleMaps
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
     
+    var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Thread.sleep(forTimeInterval: 2)
         GMSServices.provideAPIKey("AIzaSyCMxlBBdK_NSXwvNeH51vLDGbOwIoi-y2Q")
         IQKeyboardManager.shared.enable = true
-       
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        Thread.sleep(forTimeInterval: 2)
+        window?.overrideUserInterfaceStyle = .light
+        if accessToken == "" && Signup_step == ""{
+            RootControllerProxy.shared.rootWithDrawer("LogInVc")
+        }
+        if accessToken != "" && Signup_step == "2"{
+            RootControllerProxy.shared.rootWithDrawer("CustomTabBarVC")
+        }
+        else{
+        }
         return true
-    }
-    // MARK: UISceneSession Lifecycle
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-      
     }
 }
 

@@ -18,3 +18,8 @@ class UserInfo {
         phone_number = data["phone_number"] as? String ?? ""
     }
 }
+class PrivacyPolicy {
+    var created_at,id,terms_consitions: String?
+    func datadict(data: NSDictionary){
+    }
+}

@@ -15,6 +15,12 @@ class ChangePasswordVc: UIViewController, BackToLogProtocol  {
     }
     @IBOutlet weak var oNPasswordVw: UIView!
     @IBOutlet weak var CNPasswordVw: UIView!
+    @IBOutlet weak var nPasswordEyeBtn: UIButton!
+    @IBOutlet weak var nPasswordTF: UITextField!
+    @IBOutlet weak var cNPasswordTF: UITextField!
+    @IBOutlet weak var cNPasswordEyeBtn: UIButton!
+    var nPassword = false
+    var cNpassword = false
     override func viewDidLoad() {
         super.viewDidLoad()
         addshadow()
@@ -23,25 +29,32 @@ class ChangePasswordVc: UIViewController, BackToLogProtocol  {
     @IBAction func oBackBtnAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    @IBAction func nPasswordEyeBtnAction(_ sender: Any) {
+        if nPassword == false{
+            nPassword = true
+            nPasswordTF.isSecureTextEntry = false
+            nPasswordEyeBtn.setImage(UIImage(named: "password-show"), for: .normal)
+        } else{
+            nPassword = false
+            nPasswordTF.isSecureTextEntry = true
+            nPasswordEyeBtn.setImage(UIImage(named: "password-hide"), for: .normal)
+        }
+    }
+    @IBAction func cNPasswordEyeBtnAction(_ sender: Any) {
+        if cNpassword == false{
+            cNpassword = true
+            cNPasswordTF.isSecureTextEntry = false
+            cNPasswordEyeBtn.setImage(UIImage(named: "password-show"), for: .normal)
+        } else{
+            cNpassword = false
+            cNPasswordTF.isSecureTextEntry = true
+            cNPasswordEyeBtn.setImage(UIImage(named: "password-hide"), for: .normal)
+        }
+    }
     @IBAction func saveBtnAction(_ sender: Any) {
         let nav = storyboard?.instantiateViewController(withIdentifier: "BackLogInPopUp") as! BackLogInPopUp
         nav.backtoLogObj = self
         self.navigationController?.present(nav, animated: false, completion: nil)
     }
 }
-extension ChangePasswordVc{
-    func addshadow(){
-        // MARK :-- New Password View Shadow
-        oNPasswordVw.layer.shadowColor = UIColor.red.cgColor
-        oNPasswordVw.layer.shadowOpacity = 0.1
-        oNPasswordVw.layer.shadowRadius = 3.0
-        oNPasswordVw.layer.shadowOffset = .zero
-        oNPasswordVw.layer.masksToBounds = false
-        // MARK :-- Confirm New Password View Shadow
-        CNPasswordVw.layer.shadowColor = UIColor.red.cgColor
-        CNPasswordVw.layer.shadowOpacity = 0.1
-        CNPasswordVw.layer.shadowRadius = 3.0
-        CNPasswordVw.layer.shadowOffset = .zero
-        CNPasswordVw.layer.masksToBounds = false
-    }
-}
+

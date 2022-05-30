@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import SVProgressHUD
+import Alamofire
+import SDWebImage
 
 class EditProfileVc: UIViewController {
     @IBOutlet weak var oProfileVw: UIView!
@@ -14,18 +17,39 @@ class EditProfileVc: UIViewController {
     @IBOutlet weak var oLNameVw: UIView!
     @IBOutlet weak var oEmailVw: UIView!
     @IBOutlet weak var oPNumberVw: UIView!
+    @IBOutlet weak var oFirstNameTF: UITextField!
+    @IBOutlet weak var oLastNameTF: UITextField!
+    @IBOutlet weak var oPhoneTF: UITextField!
+    @IBOutlet weak var oEmailTF: UITextField!
     @IBOutlet weak var oEditBtn: UIButton!
     @IBOutlet weak var oProfileImage: UIImageView!
     @IBOutlet weak var oProfileUploadBtn: UIButton!
     let imgPickerCont = UIImagePickerController()
     var userImage: UIImage?
+    var firstName:String?
+    var lastName:String?
+    var email:String?
+    var phone:String?
+    var imgUrl = String()
+    var profileimg = String()
     override func viewDidLoad() {
         super.viewDidLoad()
         addShadow()
         imgPickerCont.delegate = self
+       
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        oFirstNameTF.text = firstName
+        oLastNameTF.text = lastName
+        oEmailTF.text = email
+        oPhoneTF.text = phone
+        imgUrl = profileimg ?? ""
+        let removeSpace = imgUrl.replacingOccurrences(of: "", with: "%20")
+        oProfileImage.sd_imageIndicator = SDWebImageActivityIndicator.white
+        oProfileImage.sd_setImage(with: URL.init(string: removeSpace), placeholderImage: UIImage(named: ""), options: .highPriority, context: [:])
     }
     @IBAction func submitBtnAction(_ sender: Any) {
-        self.navigationController?.popViewController(animated: false)
+        ProfileUpdate()
     }
     @IBAction func oBackBtnAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -72,53 +96,56 @@ extension EditProfileVc: UINavigationControllerDelegate,UIImagePickerControllerD
             self.oProfileImage.image = info[.editedImage] as? UIImage
             self.userImage = image
             self.userImage = info[.editedImage] as? UIImage
-           
+            self.oProfileImage.resignFirstResponder()
+            
         })
     }
 }
+
+//  MARK:--> extension MARK:-->Hit Profile Update Api 
 extension EditProfileVc{
-    func addShadow(){
-        // MARK :-- First Name View Shadow
-        oProfileVw.layer.shadowColor = UIColor.red.cgColor
-        oProfileVw.layer.shadowOpacity = 0.1
-        oProfileVw.layer.shadowRadius = 3.0
-        oProfileVw.layer.shadowOffset = .zero
-        oProfileVw.layer.masksToBounds = false
-        // MARK :-- Last NameView Shadow
-        oDetailsVw.layer.shadowColor = UIColor.red.cgColor
-        oDetailsVw.layer.shadowOpacity = 0.1
-        oDetailsVw.layer.shadowRadius = 3.0
-        oDetailsVw.layer.shadowOffset = .zero
-        oDetailsVw.layer.masksToBounds = false
-        // MARK :-- Email View Shadow
-        oEmailVw.layer.shadowColor = UIColor.red.cgColor
-        oEmailVw.layer.shadowOpacity = 3.0
-        oEmailVw.layer.shadowRadius = 0.5
-        oEmailVw.layer.shadowOffset = .zero
-        oEmailVw.layer.masksToBounds = false
-        // MARK :-- Phone View Shadow
-        oPNumberVw.layer.shadowColor = UIColor.red.cgColor
-        oPNumberVw.layer.shadowOpacity = 3.0
-        oPNumberVw.layer.shadowRadius = 0.5
-        oPNumberVw.layer.shadowOffset = .zero
-        oPNumberVw.layer.masksToBounds = false
-        // MARK :-- Password View Shadow
-        oLNameVw.layer.shadowColor = UIColor.red.cgColor
-        oLNameVw.layer.shadowOpacity = 3.0
-        oLNameVw.layer.shadowRadius = 0.5
-        oLNameVw.layer.shadowOffset = .zero
-        oLNameVw.layer.masksToBounds = false
-        // MARK :-- Confirm Password View Shadow
-        oFNameVw.layer.shadowColor = UIColor.red.cgColor
-        oFNameVw.layer.shadowOpacity = 3.0
-        oFNameVw.layer.shadowRadius = 0.5
-        oFNameVw.layer.shadowOffset = .zero
-        oFNameVw.layer.masksToBounds = false
-        // MARK :-- Confirm Password View Shadow
-        oProfileUploadBtn.layer.shadowColor = UIColor.red.cgColor
-        oProfileUploadBtn.layer.shadowOpacity = 0.3
-        oProfileUploadBtn.layer.shadowRadius = 3.5
-        oProfileUploadBtn.layer.shadowOffset = .zero
-        oProfileUploadBtn.layer.masksToBounds = false
+    //  MARK:-->Hit Profile Update Api
+    func ProfileUpdate(){
+        var parameters = [String:AnyObject]()
+        parameters = ["first_name" : oFirstNameTF.text ?? "",
+                      "last_name":oLastNameTF.text ?? ""
+        ] as [String : AnyObject]
+        let URL = "\(Apis.ServerUrl)\(Apis.UpdateProfile)"
+        print("parameters",parameters)
+        requestWith(endUrl: URL, imagedata: userImage?.jpegData(compressionQuality: 1.0), parameters: parameters)
+    }
+    func requestWith(endUrl: String, imagedata: Data?, parameters: [String : AnyObject]){
+        let url = endUrl
+        let timeStamp = Date().timeIntervalSince1970*1000
+        let fileName = "profile_image\(timeStamp).png"
+        SVProgressHUD.show()
+        AF.upload(multipartFormData: { (multipartFormData) in
+            
+            for (key, value) in parameters {
+                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+            }
+            if let data = imagedata{
+                multipartFormData.append(data, withName: "profile_image", fileName: fileName, mimeType: "profile_image/png")
+            }
+        }, to:url,headers: HTTPHeaders(headers())).responseJSON{ response in
+            if response.data != nil && response.error == nil {
+                if let JSON = response.value as? NSDictionary {
+                    if response.response?.statusCode == 200 {
+                        SVProgressHUD.dismiss()
+                        
+                    }
+                    self.navigationController?.popViewController(animated: false)
+                    Proxy.shared.displayStatusCodeAlert(AppAlerts.titleValue.UpdateProfile)
+                } else {
+                    if response.data != nil {
+                        debugPrint(NSString(data: response.data!, encoding: String.Encoding.utf8.rawValue)!)
+                    }
+                }
+            }
+            
+        }
     }
 }
+
+
+

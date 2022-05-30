@@ -10,6 +10,7 @@ protocol ThankYouProtocol{
     func removethankYouObjPop(address:String)
 }
 class ThankYouPopUp: UIViewController {
+    // MARK :-- OutLets
     @IBOutlet weak var oMainVw: UIView!
     var thankYouObj:ThankYouProtocol?
     override func viewDidLoad() {
@@ -20,6 +21,7 @@ class ThankYouPopUp: UIViewController {
         oMainVw.layer.shadowOffset = .zero
         oMainVw.layer.masksToBounds = false
     }
+    // MARK :-- Continue Button Action
     @IBAction func oContinueBtnAction(_ sender: Any) {
         self.dismiss(animated: true, completion: {
         self.thankYouObj?.removethankYouObjPop(address:"good")

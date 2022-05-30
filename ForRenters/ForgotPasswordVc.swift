@@ -8,6 +8,7 @@
 import UIKit
 
 class ForgotPasswordVc: UIViewController {
+    // MARK :-- OutLets
     @IBOutlet weak var mailVw: UIView!
     @IBOutlet weak var mailTf: UITextField!
 //    @IBOutlet weak var MailVw: UIView!
@@ -19,11 +20,13 @@ class ForgotPasswordVc: UIViewController {
         mailVw.layer.shadowOffset = .zero
         mailVw.layer.masksToBounds = false
     }
+    // MARK :-- Submit Button Action
     @IBAction func submitBtnAction(_ sender: Any) {
         let vc = UIStoryboard(name: "Main", bundle:
         nil).instantiateViewController(withIdentifier: "VerificationOTPVc") as! VerificationOTPVc
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    // MARK :-- Back Button Action
     @IBAction func backBtnAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

@@ -24,7 +24,7 @@ class LogInVM{
                 let status = JSON["success"] as? String
                 if status == "true"{
                     if let dataDic = JSON["data"] as? NSDictionary{
-                        Signup_step = dataDic["signup_step"] as? Int ?? 0
+                        Signup_step = dataDic["signup_step"] as? String  ?? ""
                         accessToken = dataDic["device_token"] as? String ?? ""
                         userdataObj.datadict(data:dataDic)
                     }

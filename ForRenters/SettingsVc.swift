@@ -7,7 +7,11 @@
 
 import UIKit
 
-class SettingsVc: UIViewController, LogOutProtocol {
+class SettingsVc: UIViewController, LogOutProtocol, SurePasswordPop {
+    func removesurepassordObjPop(address: String) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResetPasswordVc") as! ResetPasswordVc
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     func removelogoutObjPop(address: String) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInVc") as! LogInVc
         self.navigationController?.pushViewController(vc, animated: true)
@@ -68,12 +72,10 @@ extension SettingsVc: UITableViewDelegate,UITableViewDataSource {
             shadow()
             cell.oInstaTikView.isHidden = true
         }
-       
         else if indexPath.row == 7 {
             shadow()
             cell.oInstaTikView.isHidden = true
         }
-        
         // MARK :-- table Cell Main View Shadow
         func shadow()
         {
@@ -93,9 +95,21 @@ extension SettingsVc: UITableViewDelegate,UITableViewDataSource {
             self.navigationController?.present(nav, animated: false, completion: nil)
         }
         if indexPath.row == 5{
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResetPasswordVc") as! ResetPasswordVc
+            let nav = self.storyboard?.instantiateViewController(withIdentifier: "SurePasswordPopUpVc") as! SurePasswordPopUpVc
+        nav.surepassordObj = self
+        self.navigationController?.present(nav, animated: false, completion: nil)
+        }
+        if indexPath.row == 0{
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AboutUsVC") as! AboutUsVC
             self.navigationController?.pushViewController(vc, animated: true)
-           
+        }
+        if indexPath.row == 1{
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PrivacyPolicyVC") as! PrivacyPolicyVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if indexPath.row == 4{
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TermOfUseVC") as! TermOfUseVC
+            self.navigationController?.pushViewController(vc, animated: true)
         }
 }
 }

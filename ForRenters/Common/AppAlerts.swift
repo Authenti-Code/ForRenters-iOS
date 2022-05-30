@@ -77,6 +77,11 @@ enum Apis {
     static let OtpVerification = "signUpStep3"
     static let logIn = "login"
     static let logOut =  "logout"
-    
+    static let ProfileDetail = "profileGet"
+    static let UpdateProfile = "profileUpdate"
+    static let changePassword = "change-password"
+    static let aboutUs = "about-us"
+    static let termCondition = "terms-condition"
+    static let privacyPolicy = "privacy_policy"
 }
 

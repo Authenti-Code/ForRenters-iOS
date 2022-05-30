@@ -16,6 +16,8 @@ class ChooseMethodPopUp: UIViewController {
     @IBOutlet weak var oEmailVw: UIView!
     @IBOutlet weak var ophoneLbl: UILabel!
     @IBOutlet weak var oEmailLbl: UILabel!
+    @IBOutlet weak var oPhoneImg: UIImageView!
+    @IBOutlet weak var oEmailImg: UIImageView!
     var chooseSendOtpObj:ChooseSendProtocol?
     var phone:Bool = false
     var Email:Bool = false
@@ -25,12 +27,20 @@ class ChooseMethodPopUp: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         Email = true
+        phone = false
+        method = "email"
+        oEmailImg.image = UIImage(named: "email-white")
+        email = userdataObj.email
         oEmailVw.layer.backgroundColor = UIColor.black.cgColor
         oPhoneVw.layer.backgroundColor = UIColor.unselectColor.cgColor
         ophoneLbl.textColor = UIColor.black
         oEmailLbl.textColor = UIColor.white
         oMainVw.roundCorners([.topLeft , .topRight], radius: 35)
+        
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     @IBAction func oContinueBtnAction(_ sender: Any) {
         chooseSignUp{
@@ -44,8 +54,10 @@ class ChooseMethodPopUp: UIViewController {
             Email = false
             oPhoneVw.layer.backgroundColor = UIColor.black.cgColor
             oEmailVw.layer.backgroundColor = UIColor.unselectColor.cgColor
-        ophoneLbl.textColor = UIColor.white
-        oEmailLbl.textColor = UIColor.black
+           oPhoneImg.image = UIImage(named: "phone-white")
+           oEmailImg.image = UIImage(named: "mail")
+           ophoneLbl.textColor = UIColor.white
+           oEmailLbl.textColor = UIColor.black
         }
     @IBAction func oEmailBtnAction(_ sender: Any) {
         Email = true
@@ -54,6 +66,8 @@ class ChooseMethodPopUp: UIViewController {
         email = userdataObj.email
         oEmailVw.layer.backgroundColor = UIColor.black.cgColor
         oPhoneVw.layer.backgroundColor = UIColor.unselectColor.cgColor
+        oEmailImg.image = UIImage(named: "email-white")
+        oPhoneImg.image = UIImage(named: "phone-black")
         ophoneLbl.textColor = UIColor.black
         oEmailLbl.textColor = UIColor.white
 }

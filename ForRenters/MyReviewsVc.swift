@@ -8,16 +8,14 @@
 import UIKit
 
 class MyReviewsVc: UIViewController {
+    // MARK :-- OutLets
     @IBOutlet weak var MyReviewTblView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         MyReviewTblView.delegate = self
         MyReviewTblView.dataSource = self
-       
         // Do any additional setup after loading the view.
     }
-    
-
 }
 extension MyReviewsVc: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

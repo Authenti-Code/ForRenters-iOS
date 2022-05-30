@@ -24,12 +24,17 @@ class SignUpVc: UIViewController, ChooseSendProtocol {
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var confirmPasswordTF: UITextField!
     @IBOutlet weak var oPasswordVw: UIView!
+    @IBOutlet weak var oPasswordEyeBtn: UIButton!
+    @IBOutlet weak var oCPasswordEyeBtn: UIButton!
     @IBOutlet weak var oCPasswordVw: UIView!
     let signUpVMObj =  SignUpVM()
+    var password = false
+    var Cpassword = false
     override func viewDidLoad() {
         super.viewDidLoad()
         addShadow()
     }
+    // MARK :-- SignUp Button Action
     @IBAction func oSignUpBtnAction(_ sender: Any) {
         let signRequest = SignUp.Request(firstname: firstNameTF.text?.trimmed(),lastName: LastNameTF.text?.trimmed(), email: emailTF.text?.trimmed(),phone:phoneTF.text?.trimmed(), password: passwordTF.text?.trimmed(), confirmPassword:confirmPasswordTF.text?.trimmed())
         signUpVMObj.signUpApi(signRequest){
@@ -44,8 +49,26 @@ class SignUpVc: UIViewController, ChooseSendProtocol {
         self.navigationController?.pushViewController(vc, animated: true)
 }
     @IBAction func passwordEyeBtnAction(_ sender: Any) {
+        if password == false{
+            password = true
+            passwordTF.isSecureTextEntry = false
+            oPasswordEyeBtn.setImage(UIImage(named: "password-show"), for: .normal)
+        } else{
+            password = false
+            passwordTF.isSecureTextEntry = true
+            oPasswordEyeBtn.setImage(UIImage(named: "password-hide"), for: .normal)
+        }
     }
     @IBAction func cPasswordEyeBtnAction(_ sender: Any) {
+        if Cpassword == false{
+            Cpassword = true
+            confirmPasswordTF.isSecureTextEntry = false
+            oCPasswordEyeBtn.setImage(UIImage(named: "password-show"), for: .normal)
+        } else{
+            Cpassword = false
+            confirmPasswordTF.isSecureTextEntry = true
+            oCPasswordEyeBtn.setImage(UIImage(named: "password-hide"), for: .normal)
+        }
     }
 }
 

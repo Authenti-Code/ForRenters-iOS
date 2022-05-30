@@ -10,16 +10,24 @@ import GoogleMaps
 
 class HomeVc: UIViewController ,CLLocationManagerDelegate, GMSMapViewDelegate{
     @IBOutlet weak var mapView:GMSMapView!
-    @IBOutlet weak var oSearchVw:UIView!
+    @IBOutlet weak var oSearch1Vw:UIView!
+    @IBOutlet weak var oSearch1TF:UITextField!
+    @IBOutlet weak var oSearch2Vw:UIView!
+    @IBOutlet weak var oSearch2TF:UITextField!
     var locationManager = CLLocationManager()
 //    var didFindMyLocation = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        oSearchVw.layer.shadowColor = UIColor.red.cgColor
-        oSearchVw.layer.shadowOpacity = 0.4
-        oSearchVw.layer.shadowRadius = 8.0
-        oSearchVw.layer.shadowOffset = .zero
-        oSearchVw.layer.masksToBounds = false
+        oSearch1Vw.layer.shadowColor = UIColor.red.cgColor
+        oSearch1Vw.layer.shadowOpacity = 0.4
+        oSearch1Vw.layer.shadowRadius = 8.0
+        oSearch1Vw.layer.shadowOffset = .zero
+        oSearch1Vw.layer.masksToBounds = false
+//        oSearch2Vw.layer.shadowColor = UIColor.red.cgColor
+//        oSearch2Vw.layer.shadowOpacity = 0.4
+//        oSearch2Vw.layer.shadowRadius = 8.0
+//        oSearch2Vw.layer.shadowOffset = .zero
+//        oSearch2Vw.layer.masksToBounds = false
                 initializeTheLocationManager()
                 self.mapView.isMyLocationEnabled = true
     }

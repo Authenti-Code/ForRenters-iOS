@@ -20,8 +20,8 @@ class RatingVc: UIViewController, ThankYouProtocol {
     @IBOutlet weak var RatingAddressVerifTblVw:UITableView!
     @IBOutlet weak var RatingQuestionGroupCVw:UICollectionView!
     @IBOutlet weak var oStickerVw: UIView!
-    var sticlerIconAry = ["awfull","ok","good","great","awesome"]
-    var sticlerNameAry = ["Awful","Ok","Good","Great","Awesome"]
+    var stickerIconAry = ["awfull","ok","good","great","awesome"]
+    var stickerNameAry = ["Awful","Ok","Good","Great","Awesome"]
     override func viewDidLoad() {
         super.viewDidLoad()
         addShadow()
@@ -48,7 +48,7 @@ extension RatingVc: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var aryCount = Int()
         if collectionView ==  RatingStickerCVw{
-            aryCount = sticlerIconAry.count
+            aryCount = stickerIconAry.count
         } else  if collectionView == RatingQuestionGroupCVw{
             aryCount = groupAry.count
         }
@@ -58,8 +58,8 @@ extension RatingVc: UICollectionViewDelegate, UICollectionViewDataSource {
         var cellMain = UICollectionViewCell()
         if collectionView == RatingStickerCVw{
             let cell = RatingStickerCVw.dequeueReusableCell(withReuseIdentifier: "RatingStickerCollectionCell", for: indexPath) as! RatingStickerCollectionCell
-            cell.oStickerIcon.image = UIImage(named:sticlerIconAry[indexPath.item])
-            cell.oStickerLbl.text = sticlerNameAry[indexPath.item]
+            cell.oStickerIcon.image = UIImage(named:stickerIconAry[indexPath.item])
+            cell.oStickerLbl.text = stickerNameAry[indexPath.item]
             // MARK :-- Password View Shadow
             cellMain = cell
         }

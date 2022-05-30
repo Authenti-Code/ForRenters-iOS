@@ -41,6 +41,7 @@ extension LogoutPopUp {
                 let status = JSON["success"] as? String
                 if status == "true"{
                     accessToken = ""
+                    Signup_step = ""
                     completion()
                 } else{
                     Proxy.shared.displayStatusCodeAlert(JSON["errorMessage"] as? String ?? "")
