@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyCMxlBBdK_NSXwvNeH51vLDGbOwIoi-y2Q")
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
-        Thread.sleep(forTimeInterval: 2)
         window?.overrideUserInterfaceStyle = .light
         if accessToken == "" && Signup_step == ""{
             RootControllerProxy.shared.rootWithDrawer("LogInVc")
