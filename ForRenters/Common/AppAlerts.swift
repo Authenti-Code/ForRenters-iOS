@@ -83,5 +83,6 @@ enum Apis {
     static let aboutUs = "about-us"
     static let termCondition = "terms-condition"
     static let privacyPolicy = "privacy_policy"
+    
 }
 

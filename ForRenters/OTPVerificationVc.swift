@@ -20,7 +20,8 @@ class OTPVerificationVc: UIViewController,UITextFieldDelegate, SuccessProtocol {
     @IBOutlet weak var oVw2: UIView!
     @IBOutlet weak var oVw3: UIView!
     @IBOutlet weak var oVw4: UIView!
-    var emailAddres:String?
+    @IBOutlet weak var sendOtpLbl: UILabel!
+    var emailAddres = String()
     override func viewDidLoad() {
         super.viewDidLoad()
         addShadow()
@@ -31,6 +32,7 @@ class OTPVerificationVc: UIViewController,UITextFieldDelegate, SuccessProtocol {
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
+        sendOtpLbl.text = ("Please enter the 4 digit code that has been sent to \(emailAddres)")
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     @IBAction func oVerifyOTPAction(_ sender: Any) {

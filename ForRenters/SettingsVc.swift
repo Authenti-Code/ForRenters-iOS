@@ -9,15 +9,19 @@ import UIKit
 
 class SettingsVc: UIViewController, LogOutProtocol, SurePasswordPop {
     func removesurepassordObjPop(address: String) {
+       
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResetPasswordVc") as! ResetPasswordVc
         self.navigationController?.pushViewController(vc, animated: true)
+      
     }
     func removelogoutObjPop(address: String) {
+        logOutApi{
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInVc") as! LogInVc
         self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     @IBOutlet weak var SettingTblView: UITableView!
-    var SettNameAry = ["About us","Privacy Policy/Cookies","Help","Contact us","Terms of use","Reset password","","Logout"]
+    var SettNameAry = ["About us","Privacy Policy/Cookies","Help","Contact us","Term of use","Reset password","","Logout"]
     var SettIconAry = ["Sprofile","privacy","help","contact-us","terms-of-use","reset-password","","logout"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,3 +117,29 @@ extension SettingsVc: UITableViewDelegate,UITableViewDataSource {
         }
 }
 }
+extension SettingsVc {
+    //MARK:--> Hit LogOut Api Handling
+    func logOutApi(completion:@escaping() -> Void) {
+        let Url = "\(Apis.ServerUrl)\(Apis.logOut)"
+        var param = [String : Any]()
+        param = ["": ""]
+       print("param",param)
+        WebProxy.shared.postData(Url, params:param, showIndicator: true, methodType: .post) { (JSON, isSuccess, message) in
+            if isSuccess {
+                let status = JSON["success"] as? String
+                if status == "true"{
+                    print("accessToken ",accessToken )
+                    accessToken = ""
+                    Signup_step = ""
+                    completion()
+                    print("accessToken ",accessToken )
+                } else{
+                    Proxy.shared.displayStatusCodeAlert(JSON["errorMessage"] as? String ?? "")
+                }
+            } else {
+                Proxy.shared.displayStatusCodeAlert(message)
+            }
+        }
+    }
+}
+

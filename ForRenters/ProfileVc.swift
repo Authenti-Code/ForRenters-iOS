@@ -65,6 +65,7 @@ extension ProfileVc {
                 let status = JSON["success"] as? String
                 if status == "true"{
                     if let dataDic = JSON["data"] as? NSDictionary{
+//                        Signup_step = dataDic["signup_step"] as? String  ?? ""
                         ProfileImg = dataDic["profile_image"] as? String ?? ""
                         userdataObj.datadict(data:dataDic)
                     }

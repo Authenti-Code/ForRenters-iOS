@@ -8,7 +8,6 @@
 import UIKit
 
 class UserInfo {
-    
     var first_name,created_at,email,last_name,phone_number: String?
     var id:Int?
     func datadict(data: NSDictionary){
@@ -18,8 +17,21 @@ class UserInfo {
         phone_number = data["phone_number"] as? String ?? ""
     }
 }
-class PrivacyPolicy {
+class TermCondition {
     var created_at,id,terms_consitions: String?
     func datadict(data: NSDictionary){
+        terms_consitions = data["terms_consitions"] as? String ?? ""
+    }
+}
+class PrivacyPolicy {
+    var created_at,id,privacy_policies: String?
+    func datadict(data: NSDictionary){
+        privacy_policies = data["terms_consitions"] as? String ?? ""
+    }
+}
+class Aboutas {
+    var created_at,id,about_us: String?
+    func datadict(data: NSDictionary){
+        about_us = data["about_us"] as? String ?? ""
     }
 }

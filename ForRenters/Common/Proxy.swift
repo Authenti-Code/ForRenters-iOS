@@ -21,6 +21,9 @@ let mustredColor = UIColor(red: 212/255, green: 175/255, blue: 55/255, alpha: 1.
 
 let Defaults = UserDefaults.standard
 let userdataObj = UserInfo()
+var aboutasObj = Aboutas()
+var termConditionObj = TermCondition()
+var privacyObj = PrivacyPolicy()
 //let jobDetailsObj = JobDetailsDetails()
 
 class Proxy {
