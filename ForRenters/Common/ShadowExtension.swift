@@ -267,3 +267,21 @@ extension ChangePasswordVc{
         CNPasswordVw.layer.masksToBounds = false
     }
 }
+extension RatingVc{
+    func addShadow(){
+        // MARK :-- First Name View Shadow
+        oStickerVw.layer.shadowColor = UIColor.red.cgColor
+        oStickerVw.layer.shadowOpacity = 0.1
+        oStickerVw.layer.shadowRadius = 3.0
+        oStickerVw.layer.shadowOffset = .zero
+        oStickerVw.layer.masksToBounds = false
+        // MARK :-- Last NameView Shadow
+        RatingQuestionTblVw.layer.shadowColor = UIColor.red.cgColor
+        RatingQuestionTblVw.layer.shadowOpacity = 0.1
+        RatingQuestionTblVw.layer.shadowRadius = 3.0
+        RatingQuestionTblVw.layer.shadowOffset = .zero
+        RatingQuestionTblVw.layer.masksToBounds = false
+       
+        
+    }
+}

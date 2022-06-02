@@ -74,10 +74,16 @@ class ResetPasswordVc: UIViewController, SuccessPasswordPop {
         }
     }
     @IBAction func saveBtnAction(_ sender: Any) {
+        if self.oNPasswordTF.text?.count ?? 0 < 8{
+            Proxy.shared.displayStatusCodeAlert(AppAlerts.titleValue.validPassword)
+                            return
+                        }
+        else{
         passwordChangeApi{
         let nav = self.storyboard?.instantiateViewController(withIdentifier: "SuccessPasswordPopUpVc") as! SuccessPasswordPopUpVc
     nav.successPasswordObj = self
     self.navigationController?.present(nav, animated: false, completion: nil)
+        }
         }
     }
 }
@@ -95,7 +101,6 @@ extension ResetPasswordVc {
                 let status = JSON["success"] as? String
                 if status == "true"{
                     completion()
-
                 } else{
                     Proxy.shared.displayStatusCodeAlert(JSON["errorMessage"] as? String ?? "")
                 }

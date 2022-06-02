@@ -22,6 +22,7 @@ class ProfileVc: UIViewController {
     @IBOutlet weak var oLastNameTF: UITextField!
     @IBOutlet weak var oPhoneTF: UITextField!
     @IBOutlet weak var oEmailTF: UITextField!
+    @IBOutlet weak var oHideShowVw: UIView!
     var imgUrl = String()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,10 +61,12 @@ extension ProfileVc {
         let Url = "\(Apis.ServerUrl)\(Apis.ProfileDetail)"
         var param = [String : Any]()
         param = ["":""]
+        oHideShowVw.isHidden = false
         WebProxy.shared.postData(Url, params:param, showIndicator: true, methodType: .post) { (JSON, isSuccess, message) in
             if isSuccess {
                 let status = JSON["success"] as? String
                 if status == "true"{
+                    self.oHideShowVw.isHidden = true
                     if let dataDic = JSON["data"] as? NSDictionary{
 //                        Signup_step = dataDic["signup_step"] as? String  ?? ""
                         ProfileImg = dataDic["profile_image"] as? String ?? ""
@@ -71,6 +74,7 @@ extension ProfileVc {
                     }
                     completion()
                 } else{
+                    self.oHideShowVw.isHidden = true
                     Proxy.shared.displayStatusCodeAlert(JSON["errorMessage"] as? String ?? "")
                 }
             } else {

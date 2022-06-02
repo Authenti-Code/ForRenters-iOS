@@ -21,7 +21,7 @@ class SettingsVc: UIViewController, LogOutProtocol, SurePasswordPop {
         }
     }
     @IBOutlet weak var SettingTblView: UITableView!
-    var SettNameAry = ["About us","Privacy Policy/Cookies","Help","Contact us","Term of use","Reset password","","Logout"]
+    var SettNameAry = ["About us","Privacy Policy/Cookies","Help","Contact us","Terms of use","Reset password","","Logout"]
     var SettIconAry = ["Sprofile","privacy","help","contact-us","terms-of-use","reset-password","","logout"]
     override func viewDidLoad() {
         super.viewDidLoad()
