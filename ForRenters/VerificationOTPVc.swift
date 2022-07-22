@@ -16,6 +16,7 @@ class VerificationOTPVc: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var oVw2: UIView!
     @IBOutlet weak var oVw3: UIView!
     @IBOutlet weak var oVw4: UIView!
+    var email = String()
     override func viewDidLoad() {
         super.viewDidLoad()
         addShadow()
@@ -25,10 +26,12 @@ class VerificationOTPVc: UIViewController,UITextFieldDelegate {
         oTF4.delegate = self
     }
     @IBAction func oVerifyOTPAction(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle:
-        nil).instantiateViewController(withIdentifier: "ChangePasswordVc") as! ChangePasswordVc
-        self.navigationController?.pushViewController(vc, animated: true)
-       
+        otpVerifyApi(otp: "\(oTF1.text ?? "")\(oTF2.text ?? "")\(oTF3.text ?? "")\(oTF4.text ?? "")"){
+            
+            let nav = self.storyboard?.instantiateViewController(withIdentifier: "ChangePasswordVc") as! ChangePasswordVc
+            nav.email = self.email
+            self.navigationController?.pushViewController(nav, animated: true)
+        }
 }
     @IBAction func backBtnAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -67,31 +70,26 @@ class VerificationOTPVc: UIViewController,UITextFieldDelegate {
         return true
         }
 }
-extension VerificationOTPVc{
-    func addShadow(){
-        // MARK :-- oVw1 View Shadow
-        oVw1.layer.shadowColor = UIColor.lightGray.cgColor
-        oVw1.layer.shadowOpacity = 0.5
-        oVw1.layer.shadowRadius = 2.5
-        oVw1.layer.shadowOffset = .zero
-        oVw1.layer.masksToBounds = false
-        // MARK :-- oVw2 Shadow
-        oVw2.layer.shadowColor = UIColor.lightGray.cgColor
-        oVw2.layer.shadowOpacity = 0.5
-        oVw2.layer.shadowRadius = 2.5
-        oVw2.layer.shadowOffset = .zero
-        oVw2.layer.masksToBounds = false
-        // MARK :-- oVw3 View Shadow
-        oVw3.layer.shadowColor = UIColor.lightGray.cgColor
-        oVw3.layer.shadowOpacity = 0.5
-        oVw3.layer.shadowRadius = 2.5
-        oVw3.layer.shadowOffset = .zero
-        oVw3.layer.masksToBounds = false
-        // MARK :-- oVw4 View Shadow
-        oVw4.layer.shadowColor = UIColor.lightGray.cgColor
-        oVw4.layer.shadowOpacity = 0.5
-        oVw4.layer.shadowRadius = 2.5
-        oVw4.layer.shadowOffset = .zero
-        oVw4.layer.masksToBounds = false
+extension VerificationOTPVc {
+    //MARK:--> Hit verify OTP api
+    func otpVerifyApi(otp:String?,completion:@escaping() -> Void) {
+        let Url = "\(Apis.ServerUrl)\(Apis.forgotPasswordVerifyOtp)"
+        var param = [String : Any]()
+        param = ["email_phone_number":email as AnyObject,
+                 "otp":otp as AnyObject]
+        print("param",param)
+        WebProxy.shared.postData(Url, params:param, showIndicator: true, methodType: .post) { (JSON, isSuccess, message) in
+            if isSuccess {
+                let status = JSON["success"] as? String
+                if status == "true"{
+                    
+                    completion()
+                } else{
+                    Proxy.shared.displayStatusCodeAlert(JSON["errorMessage"] as? String ?? "")
+                }
+            } else {
+                Proxy.shared.displayStatusCodeAlert(message)
+            }
+        }
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 class ChangePasswordVc: UIViewController, BackToLogProtocol  {
     func removebacktoLogObjPop(addresss: String) {
         let vc = UIStoryboard(name: "Main", bundle:
-        nil).instantiateViewController(withIdentifier: "LogInVc") as! LogInVc
+                                nil).instantiateViewController(withIdentifier: "LogInVc") as! LogInVc
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBOutlet weak var oNPasswordVw: UIView!
@@ -21,6 +21,7 @@ class ChangePasswordVc: UIViewController, BackToLogProtocol  {
     @IBOutlet weak var cNPasswordEyeBtn: UIButton!
     var nPassword = false
     var cNpassword = false
+    var email = String()
     override func viewDidLoad() {
         super.viewDidLoad()
         addshadow()
@@ -52,9 +53,36 @@ class ChangePasswordVc: UIViewController, BackToLogProtocol  {
         }
     }
     @IBAction func saveBtnAction(_ sender: Any) {
-        let nav = storyboard?.instantiateViewController(withIdentifier: "BackLogInPopUp") as! BackLogInPopUp
+        resetPasswordApi{
+            let nav = self.storyboard?.instantiateViewController(withIdentifier: "BackLogInPopUp") as! BackLogInPopUp
         nav.backtoLogObj = self
         self.navigationController?.present(nav, animated: false, completion: nil)
+        }
+    }
+}
+extension ChangePasswordVc {
+    //MARK:--> Hit resetPassword Api
+    func resetPasswordApi(completion:@escaping() -> Void) {
+        let Url = "\(Apis.ServerUrl)\(Apis.forgotPasswordReset)"
+        var param = [String : Any]()
+        param = ["email_phone_number": email as AnyObject,
+                 "password"
+                 :nPasswordTF.text as AnyObject,
+                 "confirm_password":cNPasswordTF.text as AnyObject]
+        print("param",param)
+        WebProxy.shared.postData(Url, params:param, showIndicator: true, methodType: .post) { (JSON, isSuccess, message) in
+            if isSuccess {
+                let status = JSON["success"] as? String
+                if status == "true"{
+                    
+                    completion()
+                } else{
+                    Proxy.shared.displayStatusCodeAlert(JSON["errorMessage"] as? String ?? "")
+                }
+            } else {
+                Proxy.shared.displayStatusCodeAlert(message)
+            }
+        }
     }
 }
 

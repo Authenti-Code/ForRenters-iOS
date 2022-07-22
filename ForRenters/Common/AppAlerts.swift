@@ -83,6 +83,10 @@ enum Apis {
     static let aboutUs = "about-us"
     static let termCondition = "terms-condition"
     static let privacyPolicy = "privacy_policy"
+    static let forgotPassword = "forgot-password"
+    static let forgotPasswordVerifyOtp = "forgot-password/verification"
+    static let forgotPasswordReset =  "reset-password"
+    
     
 }
 

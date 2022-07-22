@@ -13,6 +13,7 @@ class SignUpVc: UIViewController, ChooseSendProtocol {
            vc.emailAddres = mail
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    // MARK :-- Outlets
     @IBOutlet weak var oFNameVw: UIView!
     @IBOutlet weak var oLNameVw: UIView!
     @IBOutlet weak var oEmailVw: UIView!

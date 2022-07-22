@@ -36,7 +36,6 @@ class EditProfileVc: UIViewController {
         super.viewDidLoad()
         addShadow()
         imgPickerCont.delegate = self
-       
     }
     override func viewWillAppear(_ animated: Bool) {
         oFirstNameTF.text = firstName
@@ -97,7 +96,6 @@ extension EditProfileVc: UINavigationControllerDelegate,UIImagePickerControllerD
             self.userImage = image
             self.userImage = info[.editedImage] as? UIImage
             self.oProfileImage.resignFirstResponder()
-            
         })
     }
 }
@@ -120,7 +118,6 @@ extension EditProfileVc{
         let fileName = "profile_image\(timeStamp).png"
         SVProgressHUD.show()
         AF.upload(multipartFormData: { (multipartFormData) in
-            
             for (key, value) in parameters {
                 multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
             }

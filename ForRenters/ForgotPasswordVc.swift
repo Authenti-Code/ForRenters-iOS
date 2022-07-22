@@ -22,12 +22,35 @@ class ForgotPasswordVc: UIViewController {
     }
     // MARK :-- Submit Button Action
     @IBAction func submitBtnAction(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle:
-        nil).instantiateViewController(withIdentifier: "VerificationOTPVc") as! VerificationOTPVc
-        self.navigationController?.pushViewController(vc, animated: true)
+        sendOtpApi{
+            let nav = self.storyboard?.instantiateViewController(withIdentifier: "VerificationOTPVc") as! VerificationOTPVc
+            nav.email = self.mailTf.text ?? ""
+            self.navigationController?.pushViewController(nav, animated: true)
+        }
+       
     }
     // MARK :-- Back Button Action
     @IBAction func backBtnAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+}
+extension ForgotPasswordVc {
+    //MARK:--> Hit send Otp (Forgot password Flow) Api
+    func sendOtpApi(completion:@escaping() -> Void) {
+        let Url = "\(Apis.ServerUrl)\(Apis.forgotPassword)"
+        var param = [String : Any]()
+        param = ["email_phone_number": mailTf.text ?? ""]
+        WebProxy.shared.postData(Url, params:param, showIndicator: true, methodType: .post) { (JSON, isSuccess, message) in
+            if isSuccess {
+                let status = JSON["success"] as? String
+                if status == "true"{
+                    completion()
+                } else{
+                    Proxy.shared.displayStatusCodeAlert(JSON["errorMessage"] as? String ?? "")
+                }
+            } else {
+                Proxy.shared.displayStatusCodeAlert(message)
+            }
+        }
     }
 }

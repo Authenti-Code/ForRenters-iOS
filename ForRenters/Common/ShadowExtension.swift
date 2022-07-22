@@ -281,7 +281,33 @@ extension RatingVc{
         RatingQuestionTblVw.layer.shadowRadius = 3.0
         RatingQuestionTblVw.layer.shadowOffset = .zero
         RatingQuestionTblVw.layer.masksToBounds = false
-       
-        
+    }
+}
+extension VerificationOTPVc{
+    func addShadow(){
+        // MARK :-- oVw1 View Shadow
+        oVw1.layer.shadowColor = UIColor.lightGray.cgColor
+        oVw1.layer.shadowOpacity = 0.5
+        oVw1.layer.shadowRadius = 2.5
+        oVw1.layer.shadowOffset = .zero
+        oVw1.layer.masksToBounds = false
+        // MARK :-- oVw2 Shadow
+        oVw2.layer.shadowColor = UIColor.lightGray.cgColor
+        oVw2.layer.shadowOpacity = 0.5
+        oVw2.layer.shadowRadius = 2.5
+        oVw2.layer.shadowOffset = .zero
+        oVw2.layer.masksToBounds = false
+        // MARK :-- oVw3 View Shadow
+        oVw3.layer.shadowColor = UIColor.lightGray.cgColor
+        oVw3.layer.shadowOpacity = 0.5
+        oVw3.layer.shadowRadius = 2.5
+        oVw3.layer.shadowOffset = .zero
+        oVw3.layer.masksToBounds = false
+        // MARK :-- oVw4 View Shadow
+        oVw4.layer.shadowColor = UIColor.lightGray.cgColor
+        oVw4.layer.shadowOpacity = 0.5
+        oVw4.layer.shadowRadius = 2.5
+        oVw4.layer.shadowOffset = .zero
+        oVw4.layer.masksToBounds = false
     }
 }
